@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>双机配置 | Ruining.z Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="配置/etc/security/limits文件执行此任务可以在/etc/security/limits文件中设置default的各种限制参数。背景信息 执行此任务可以在“/etc/security/limits”文件中设置default的各种限制参数。 各参数含义可以参考该文件中的相关注释信息。 操作步骤 以root用户登录双机中主节点。编辑“/etc/security/limits”文件。 #">
+<meta name="keywords" content="-linux -unix">
+<meta property="og:type" content="article">
+<meta property="og:title" content="双机配置">
+<meta property="og:url" content="http://zuoruining1.github.io/2017/09/08/双机配置/index.html">
+<meta property="og:site_name" content="Ruining.z Blog">
+<meta property="og:description" content="配置/etc/security/limits文件执行此任务可以在/etc/security/limits文件中设置default的各种限制参数。背景信息 执行此任务可以在“/etc/security/limits”文件中设置default的各种限制参数。 各参数含义可以参考该文件中的相关注释信息。 操作步骤 以root用户登录双机中主节点。编辑“/etc/security/limits”文件。 #">
+<meta property="og:updated_time" content="2017-09-08T03:03:06.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="双机配置">
+<meta name="twitter:description" content="配置/etc/security/limits文件执行此任务可以在/etc/security/limits文件中设置default的各种限制参数。背景信息 执行此任务可以在“/etc/security/limits”文件中设置default的各种限制参数。 各参数含义可以参考该文件中的相关注释信息。 操作步骤 以root用户登录双机中主节点。编辑“/etc/security/limits”文件。 #">
+  
+    <link rel="alternate" href="/atom.xml" title="Ruining.z Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+  <link rel="stylesheet" href="/css/tocas.css">
+  <link rel="stylesheet" href="/css/animate.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <style type="text/css">
+    a.title-link:hover{
+        color: #34b2db !important;
+    }
+
+    a.title-link:active{
+        color: #2075c1 !important;
+    }
+
+    #menu-color-id{
+        background : #F7F7F7;
+    }
+
+    #menu-color-id a{
+        color: #5a5a5a;
+    }
+  </style>
+  <script src="/js/tocas.js"></script>
+  
+
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+
+<body>
+<!-- navigation -->
+
+<div class="ts fluid basic link big menu" id="menu-color-id">
+
+    <!-- ejs : align to post page or index page -->
+        
+            <div class="ts very narrow container">
+        
+
+        
+            <a class="item" href="/">Home</a>
+        
+            <a class="item" href="/archives">Archives</a>
+        
+    </div>
+</div>
+<!-- the end of navigation -->
+
+<!-- big bang title -->
+<div class="ts padded horizontally fitted fluid slate" style="background-color: #00C5CD;">
+    <!-- ejs : align to post page or index page -->
+    
+        <div class="ts very narrow container">
+    
+        <!-- Title -->
+        <h1 class="ts eleven wide column header be-center-h1">
+            <span style="color: #404040;" id="big-title">Ruining.z Blog</span>
+            <div class="sub header" id="slogan-bar" style=" margin-top: 15px; color: #404040;"></div>
+        </h1>
+        <!-- the end of title -->
+    </div>
+</div>
+<!-- the end of big bang title -->
+
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+
+<!-- main section -->
+<div class="ts text container">
+        <!-- left section -->
+        <div class="column" style=" padding: 35px; ">
+            <!-- Articles -->
+                
+                <h1 class="ts header">
+                    <span style="color: #333;">双机配置</span>
+                    <div class="sub header" style="color: #808080;">Publish: 2017/8/8 
+                     &nbsp;&nbsp;
+                        <ul class="unstyled radius-tag -list"><li class="unstyled radius-tag -list-item"><a class="unstyled radius-tag -list-link" href="/tags/linux-unix/">-linux -unix</a></li></ul>
+                    
+                    </div>
+                </h1>
+
+                <h2 id="配置-etc-security-limits文件"><a href="#配置-etc-security-limits文件" class="headerlink" title="配置/etc/security/limits文件"></a>配置/etc/security/limits文件</h2><p>执行此任务可以在/etc/security/limits文件中设置default的各种限制参数。<br>背景信息</p>
+<p>执行此任务可以在“/etc/security/limits”文件中设置default的各种限制参数。</p>
+<p>各参数含义可以参考该文件中的相关注释信息。</p>
+<p>操作步骤</p>
+<p>以root用户登录双机中主节点。<br>编辑“/etc/security/limits”文件。</p>
+<pre><code>#vi /etc/security/limits
+</code></pre><p>修改文件中以下内容：</p>
+<pre><code>default:
+        fsize =-1
+        core =-1
+        cpu =-1
+        data =-1
+        rss =-1
+        stack =200000
+        nofiles =-1
+</code></pre><p>-1表示无限制。</p>
+<p>重新启动系统。</p>
+<pre><code>#shutdown -Fr
+</code></pre><p>以root用户登录双机中备节点，重复执行2～3。</p>
+<p>##调整用户License数</p>
+<p>执行此任务可以调整一个用户允许的最大登录数。例如，如果设置为2，表示同一用户只能同时登录2次对服务器进行操作。</p>
+<p>背景信息</p>
+<p>执行此任务可以调整一个用户允许的最大登录数。例如，如果设置为2，表示同一用户只能同时登录2次对服务器进行操作。</p>
+<p>操作步骤</p>
+<p>以root用户登录双机中主节点。<br>启动smitty菜单导航工具。</p>
+<pre><code># smitty
+</code></pre><p>选择导航菜单，按“Enter”。<br>—&gt; System Environments<br>—&gt;Change/Show Number of Licensed Users<br>屏幕显示信息如下：</p>
+<pre><code>                      Change / Show Number of Licensed Users
+
+Type or select values in entry fields.
+Press Enter AFTER making all desired changes.
+
+                                                    [Entry Fields]
+ Maximum number of FIXED licenses                   [32767]                             #
+ Number of AVAILABLE FIXED licenses                  32764
+ IMMEDIATELY update AVAILABLE FIXED licenses         no                                 +
+ FLOATING licensing                                  off                                    +
+
+F1=Help               F2=Refresh             F3=Cancel              F4=List
+Esc+5=Reset           Esc+6=Command          Esc+7=Edit            Esc+8=Image
+Esc+9=Shell           Esc+0=Exit             Enter=Do
+</code></pre><p>选择“Maximum number of FIXED licenses”，在对应的值域框中输入用户的License数，如32767，按“Enter”。<br>退出smitty菜单导航工具。<br>重新启动系统。</p>
+<pre><code>#shutdown -Fr
+</code></pre><p>以root用户登录双机中备节点，重复执行2～6。</p>
+<p>##调整最大进程数和I/O参数</p>
+<p>执行此任务可以调整一个用户允许启动的进程数、每个文件输入输出的频率以及设置CORE dump是否启用。</p>
+<p>背景信息</p>
+<p>执行此任务可以调整一个用户允许启动的进程数、每个文件输入输出的频率以及设置CORE dump是否启用。</p>
+<p>操作步骤</p>
+<p>以root用户登录双机中主节点。<br>启动smitty菜单导航工具。</p>
+<pre><code># smitty
+</code></pre><p>选择导航菜单，按“Enter”。<br>—&gt; System Environments<br>—&gt; Change/Show Characteristics of Operating System<br>屏幕显示信息如下：</p>
+<pre><code>                Change / Show Characteristics of Operating System
+
+Type or select values in entry fields.
+Press Enter AFTER making all desired changes.
+
+                                                    [Entry Fields]
+ System ID                                           0X80000D1674700000
+ Partition ID                                        0X80000D1674700001
+ Maximum number of PROCESSES allowed per user       [512]                             +#
+ Maximum number of pages in block I/O BUFFER CACHE  [20]                              +#
+ Maximum Kbytes of real memory allowed for MBUFS    [0]                                +#
+Automatically REBOOT system after a crash           true                                +
+Continuously maintain DISK I/O history              false                               +
+HIGH water mark for pending write I/Os per file    [33]                              +#
+LOW water mark for pending write I/Os per file     [24]                              +#
+Amount of usable physical memory in Kbytes          3883008
+State of system keylock at boot time                normal
+Enable full CORE dump                               true                                    +
+Use pre-430 style CORE dump                         false                                  +
+Pre-520 tuning compatibility mode                   disable                              +
+ Maximum login name length at boot time             [9]                                  +#
+ Stack Execution Disable (SED) Mode                  select                               +
+ARG/ENV list size in 4K byte blocks                [6]                                   +#
+Enable CPU Guard                                    enable                                   +
+Processor capacity increment                        1.00
+Partition is capped                                 true
+Partition is dedicated                              true
+Entitled processor capacity                         2.00
+Minimum potential processor capacity                1.00
+Maximum potential processor capacity                2.00
+Variable processor capacity weight                  0
+
+F1=Help               F2=Refresh             F3=Cancel             F4=List
+Esc+5=Reset           Esc+6=Command          Esc+7=Edit            Esc+8=Image
+Esc+9=Shell           Esc+0=Exit             Enter=Do
+</code></pre><p>配置最大进程数和I/O参数，按“Enter”。<br>配置“Maximum number of PROCESSES allowed per user”为“512”。<br>配置“HIGH water mark for pending write I/Os per file”为“33”。<br>配置“LOW water mark for pending write I/Os per file”为“24”。<br>配置“Enable full CORE dump”为“true”。<br>退出smitty菜单导航工具。<br>以root用户登录双机中备节点，重复执行2～5。</p>
+<p>##调整异步I/O参数</p>
+<p>执行此任务可以调整异步I/O参数，以满足数据库对输入输出的要求。</p>
+<p>背景信息</p>
+<p>执行此任务可以调整异步I/O参数，以满足数据库对输入输出的要求。</p>
+<p> 注意：<br>在安装Oracle数据库服务端和客户端的小型机上都必须调整异步I/O参数。</p>
+<p>操作步骤</p>
+<p>以root用户登录双机中主节点。<br>调整aio<br>启动smitty菜单导航工具。</p>
+<pre><code># smitty aio
+</code></pre><p>选择导航菜单，按“Enter”。</p>
+<p>—&gt; Change/Show Characteristics of Asynchronous I/O<br>屏幕显示信息如下：</p>
+<pre><code>                 Change/Show Characteristics of Asynchronous I/O
+
+Type or select values in entry fields.
+Press Enter AFTER making all desired changes.
+
+                                                    [Entry Fields]
+ MINIMUM number of servers                          [1]                               #
+  MAXIMUM number of servers per cpu                [50]                              #
+ maximum number of REQUESTS                         [4096]                           #
+server PRIORITY                                      [39]                               #
+STATE to be configured at system restart       available                        +
+ State of fast path                                  enable                           +
+
+F1=Help               F2=Refresh             F3=Cancel             F4=List
+Esc+5=Reset           Esc+6=Command          Esc+7=Edit            Esc+8=Image
+Esc+9=Shell           Esc+0=Exit             Enter=Do
+</code></pre><p>##配置异步I/O参数，按“Enter”。</p>
+<p>配置“MINIMUM number of servers”为“1”。<br>配置“MAXIMUM number of server per cpu”为“50”。<br>配置“STATE to be configured at system restart”为“available”。<br>配置“Stat of fast path”为“enable”。<br>调整posixaio，<br>启动smitty菜单导航工具</p>
+<pre><code>#smitty posixaio
+</code></pre><p>选择导航菜单，按“Enter”。<br>—&gt; Change/Show Characteristics of Asynchronous I/O<br>屏幕显示信息如下：</p>
+<pre><code>                  Change/Show Characteristics of Asynchronous I/O
+
+Type or select values in entry fields.
+Press Enter AFTER making all desired changes.
+
+                                                    [Entry Fields]
+ MINIMUM number of servers                          [1]                               #
+MAXIMUM number of servers per cpu                [50]                              #
+maximum number of REQUESTS                         [4096]                           #
+server PRIORITY                                      [39]                               #
+STATE to be configured at system restart       available                        +
+State of fast path                                  enable                           +
+
+F1=Help               F2=Refresh             F3=Cancel             F4=List
+Esc+5=Reset           Esc+6=Command          Esc+7=Edit            Esc+8=Image
+Esc+9=Shell           Esc+0=Exit             Enter=Do
+</code></pre><p>配置异步I/O参数，按“Enter”。<br>配置“MINIMUM number of servers”为“1”。<br>配置“MAXIMUM number of server per cpu”为“50”。<br>配置“STATE to be configured at system restart”为“available”。<br>配置“Stat of fast path”为“enable”。<br>退出smitty菜单导航工具。<br>重新启动系统。</p>
+<pre><code># shutdown -Fr
+</code></pre><p>以root用户登录双机中备节点，重复执行2～5。</p>
+<p>##调整文件系统占用内存的比例</p>
+<p>执行此任务可以调整文件系统占用内存的比例。</p>
+<p>背景信息</p>
+<p>在AIX5.3中，文件系统占用内存的比例缺省值为上限80％，下限20％，非严格上限模式。相对处理文件系统处，ISMP系统处理业务更多一些，故优先保证业务进程使用的内存。</p>
+<p>为避免文件系统占用内存过大，压缩进程本身可使用的内存空间，导致Paging Space利用过高，一般将文件系统占用内存的比例改为上限20％，下限10％，非严格上限模式。</p>
+<p>操作步骤</p>
+<p>以root用户登录双机中主节点。</p>
+<p>##调整文件系统占用内存的比例。</p>
+<pre><code># vmo -p -o maxclient%=20
+</code></pre><p>屏幕显示信息如下：</p>
+<pre><code>Setting maxclient% to 20 in nextboot file
+Setting maxclient% to 20
+
+# vmo -p -o maxperm%=20
+</code></pre><p>屏幕显示信息如下：</p>
+<pre><code>Setting maxperm% to 20 in nextboot file
+Setting maxperm% to 20
+
+# vmo -p -o minperm%=10
+</code></pre><p>屏幕显示信息如下：</p>
+<pre><code>Setting minperm% to 10 in nextboot file
+Setting minperm% to 10
+</code></pre><p>检查文件系统占用内存的比例是否配置成功。</p>
+<pre><code># vmo -a
+</code></pre><p>在显示信息中查看maxclient%、maxperm%和minperm%的值是否设置正确。<br>检查“/etc/tunables/nextboot”文件，确认是否有以下内容。</p>
+<pre><code># vi /etc/tunables/nextboot
+</code></pre><p>确保文件中存在以下内容：</p>
+<pre><code>vmo:
+strict_maxclient = &quot;1&quot;
+    lru_file_repage = &quot;0&quot;
+    strict_maxperm = &quot;0&quot;
+    minperm% = &quot;10&quot;
+    maxperm% = &quot;20&quot;
+    maxclient% = &quot;20&quot;
+</code></pre><p>如果“/etc/tunables/nextboot”文件中没有文件系统占用内存的相关配置，请修改“/etc/rc.net”文件。</p>
+<pre><code># vi /etc/rc.net
+</code></pre><p>在文件中添加以下内容：</p>
+<pre><code>if [ -f /usr/sbin/no ] ; then
+    /usr/sbin/no -o extendednetstats=0 &gt;&gt;/dev/null 2&gt;&amp;1
+    vmo -p -o maxclient%=20 &gt;&gt;/dev/null 2&gt;&amp;1
+    vmo -p -o maxperm%=20 -o minperm%=10 &gt;&gt;/dev/null 2&gt;&amp;1
+fi
+</code></pre><p>重新启动系统。</p>
+<pre><code># shutdown -Fr
+</code></pre><p>以root用户登录双机中备节点，重复执行2～6。</p>
+<p>##调整TCP超时应答选项</p>
+<p>执行此任务可以调整TCP超时应答选项fasttimo。</p>
+<p>背景信息</p>
+<p>执行此任务可以调整TCP超时应答选项fasttimo。</p>
+<p>操作步骤</p>
+<p>以root用户登录双机中主节点。<br>调整TCP超时应答选项。</p>
+<pre><code># no -po fasttimo=50
+</code></pre><p>屏幕显示信息如下：</p>
+<p>Setting fasttimo to 50<br>Setting fasttimo to 50 in nextboot file</p>
+<p>检查TCP超时应答选项是否配置成功。</p>
+<pre><code># no -a | grep fasttimo
+</code></pre><p>在显示信息中查看fasttimo的值是否设置正确。</p>
+<p>重新启动系统。</p>
+<pre><code># shutdown -Fr
+</code></pre><p>以root用户登录双机中备节点，重复执行2～4。</p>
+<p>##调整TCP/IP协议栈参数</p>
+<p>执行此任务可以调整TCP/IP协议栈的相关参数。</p>
+<p>背景信息</p>
+<p>执行此任务可以调整TCP/IP协议栈的相关参数。</p>
+<p>操作步骤</p>
+<p>以root用户登录双机中主节点。<br>调整TCP/IP协议栈参数。</p>
+<pre><code># /usr/sbin/no -o tcp_sendspace=32768
+</code></pre><p>屏幕显示信息如下：</p>
+<p>Setting tcp_sendspace to 32768<br>Change to tunable tcp_sendspace, will only be effective for future connections</p>
+<pre><code># /usr/sbin/no -o tcp_recvspace=32768
+</code></pre><p>屏幕显示信息如下：</p>
+<p>Setting tcp_recvspace to 32768<br>Change to tunable tcp_recvspace, will only be effective for future connections</p>
+<pre><code># /usr/sbin/no -o tcp_timewait=5
+</code></pre><p>屏幕显示信息如下：</p>
+<p>Setting tcp_timewait to 5</p>
+<p>重新启动系统。</p>
+<pre><code># shutdown -Fr
+</code></pre><p>检查TCP/IP协议栈参数是否配置成功。</p>
+<pre><code># no -a | grep tcp
+</code></pre><p>在显示信息中查看tcp_sendspace、tcp_recvspace和tcp_timewait的值是否设置正确。</p>
+<p>以root用户登录双机中备节点，重复执行2～4。</p>
+<p>##调整TCP重传时长和次数</p>
+<p>执行此任务可以调整TCP重传时长和次数，包括调整重传最小间隔rto_low、重传最大间隔rto_high、从重传最小间隔到重传最大间隔的重传次数rto_limit和重传最多次数rto_length。</p>
+<p>背景信息</p>
+<p>调整TCP重传时长（单位s）和次数后，TCP重传将按照“1,2,4,8,8”时间间隔顺序重传，仅需要23秒。如果没有调整，TCP重传按照“1,2，4,8,16,32,64,64,64,64,64,64,64”时间间隔顺序重传，共需要511秒。</p>
+<p>操作步骤</p>
+<p>以root用户登录双机中主节点。<br>调整TCP重传时长和次数。</p>
+<pre><code># /usr/sbin/no -r -o rto_low=1
+</code></pre><p>屏幕显示信息如下：</p>
+<p>Setting rto_low to 1 in nextboot file<br>Warning: changes will take effect only at next reboot</p>
+<pre><code># /usr/sbin/no -r -o rto_high=8
+</code></pre><p>屏幕显示信息如下：</p>
+<p>Setting rto_high to 8 in nextboot file<br>Warning: changes will take effect only at next reboot</p>
+<pre><code># /usr/sbin/no -r -o rto_limit=4
+</code></pre><p>屏幕显示信息如下：</p>
+<p>Setting rto_limit to 4 in nextboot file<br>Warning: changes will take effect only at next reboot</p>
+<pre><code># /usr/sbin/no -r -o rto_length=5
+</code></pre><p>屏幕显示信息如下：</p>
+<p>Setting rto_length to 5 in nextboot file<br>Warning: changes will take effect only at next reboot</p>
+<p>重新启动系统。</p>
+<pre><code># shutdown -Fr
+</code></pre><p>检查TCP重传时长和次数是否配置成功。</p>
+<pre><code># no -a | grep rto
+</code></pre><p>在显示信息中查看rto_low、rto_high、rto_limit和rto_length的值是否设置正确。</p>
+<p>以root用户登录双机中备节点，重复执行2～4。</p>
+<p>修改双机主机名</p>
+<p>执行此任务可以在配置系统环境之前，检查节点主机名是否符合安装规划要求。</p>
+<p>背景信息</p>
+<p>执行此任务可以在配置系统环境之前，检查节点主机名是否符合安装规划要求。</p>
+<p>操作步骤</p>
+<p>以root用户登录双机中主节点。<br>启动smitty菜单导航工具。</p>
+<pre><code># smitty hostname
+</code></pre><p>选择导航菜单，按“Enter”。<br>—&gt; Set the Hostname<br>屏幕显示信息如下：</p>
+<pre><code>                                     Set Hostname
+
+                       Please refer to Help for information
+                  concerning hostname / INTERNET address mapping
+
+Type or select values in entry fields.
+Press Enter AFTER making all desired changes.
+
+                                                            [Entry Fields]
+* HOSTNAME (symbolic name of your machine)           [name01]
+
+F1=Help               F2=Refresh             F3=Cancel              F4=List
+Esc+5=Reset           Esc+6=Command          Esc+7=Edit            Esc+8=Image
+Esc+9=Shell           Esc+0=Exit             Enter=Do
+</code></pre><p>选择“HOSTNAME (symbolic name of your machine)”，在对应的值域框中输入主机名，按“Enter”。<br>退出smitty菜单导航工具。<br>重新启动系统。</p>
+<pre><code># shutdown -Fr
+</code></pre><p>检查主机名是否修改成功。</p>
+<pre><code># hostname
+</code></pre><p>屏幕显示信息如下：</p>
+<pre><code>name01
+
+# uname -a
+</code></pre><p>屏幕显示信息如下：</p>
+<pre><code>AIX name01 3 5  0000DE25D600
+</code></pre><p>以root用户登录双机中备节点，重复执行2～7。</p>
+<p>修改双机IP地址</p>
+<p>执行此任务可以根据现场IP地址规划要求修改双机的IP地址。</p>
+<p>背景信息</p>
+<p>执行此任务可以根据现场IP地址规划要求修改双机的IP地址。</p>
+<p>操作步骤</p>
+<p>以root用户登录双机中主节点。<br>检查双机所使用的主备网卡名称。</p>
+<pre><code># ifconfig -a
+</code></pre><p>屏幕显示信息如下：</p>
+<pre><code>en0: flags=5e080863,c0&lt;UP,BROADCAST,NOTRAILERS,RUNNING,SIMPLEX,MULTICAST,GROUPRT,64BIT,CHECKSUM_OFFLOAD,PSEG,CHAIN&gt;
+    inet 10.10.10.10 netmask 0xfffffe00 broadcast 10.10.10.255
+     tcp_sendspace 131072 tcp_recvspace 65536
+en2: flags=5e080863,c0&lt;UP,BROADCAST,NOTRAILERS,RUNNING,SIMPLEX,MULTICAST,GROUPRT,64BIT,CHECKSUM_OFFLOAD,PSEG,CHAIN&gt;
+    inet 100.10.10.10 netmask 0xfffffe00 broadcast 100.10.10.255
+     tcp_sendspace 131072 tcp_recvspace 65536
+lo0: flags=e08084b&lt;UP,BROADCAST,LOOPBACK,RUNNING,SIMPLEX,MULTICAST,GROUPRT,64BIT&gt;
+    inet 127.0.0.1 netmask 0xff000000 broadcast 127.255.255.255
+    inet6 ::1/0
+     tcp_sendspace 131072 tcp_recvspace 131072 rfc1323 1
+</code></pre><p>从显示信息中可以看出，主备网卡为en0和en2。一般采用en0作为主网卡，en2作为备网卡。<br>修改双机IP地址</p>
+<p>执行此任务可以根据现场IP地址规划要求修改双机的IP地址。</p>
+<p>背景信息</p>
+<p>执行此任务可以根据现场IP地址规划要求修改双机的IP地址。</p>
+<p>操作步骤</p>
+<p>以root用户登录双机中主节点。<br>检查双机所使用的主备网卡名称。</p>
+<pre><code># ifconfig -a
+</code></pre><p>屏幕显示信息如下：</p>
+<pre><code>en0: flags=5e080863,c0&lt;UP,BROADCAST,NOTRAILERS,RUNNING,SIMPLEX,MULTICAST,GROUPRT,64BIT,CHECKSUM_OFFLOAD,PSEG,CHAIN&gt;
+    inet 10.10.10.10 netmask 0xfffffe00 broadcast 10.10.10.255
+     tcp_sendspace 131072 tcp_recvspace 65536
+en2: flags=5e080863,c0&lt;UP,BROADCAST,NOTRAILERS,RUNNING,SIMPLEX,MULTICAST,GROUPRT,64BIT,CHECKSUM_OFFLOAD,PSEG,CHAIN&gt;
+    inet 100.10.10.10 netmask 0xfffffe00 broadcast 100.10.10.255
+     tcp_sendspace 131072 tcp_recvspace 65536
+lo0: flags=e08084b&lt;UP,BROADCAST,LOOPBACK,RUNNING,SIMPLEX,MULTICAST,GROUPRT,64BIT&gt;
+    inet 127.0.0.1 netmask 0xff000000 broadcast 127.255.255.255
+    inet6 ::1/0
+     tcp_sendspace 131072 tcp_recvspace 131072 rfc1323 1
+</code></pre><p>从显示信息中可以看出，主备网卡为en0和en2。一般采用en0作为主网卡，en2作为备网卡。</p>
+<p>配置主网卡en0对应的IP地址、掩码和网关。<br>启动smitty菜单导航工具。</p>
+<pre><code># smitty tcpip
+</code></pre><p>选择导航菜单，按“Enter”。</p>
+<p>—&gt; Minimum Configuration &amp; Startup<br>—&gt; en0 04-08 Standard Ethernet Network Interface<br>屏幕显示信息如下：</p>
+<pre><code>                         Minimum Configuration &amp; Startup
+
+  To Delete existing configuration data, please use Further Configuration menus
+
+Type or select values in entry fields.
+Press Enter AFTER making all desired changes.
+
+                                                        [Entry Fields]
+* HOSTNAME                                                [name01]
+* Internet ADDRESS (dotted decimal)                  [10.10.10.300]
+ Network MASK (dotted decimal)                      [255.255.255.0]
+* Network INTERFACE                                     en0
+ NAMESERVER
+       Internet ADDRESS (dotted decimal)         [ ]
+       DOMAIN Name                               [ ]
+ Default Gateway
+   Address (dotted decimal or symbolic name)     [10.10.10.1]
+   Cost                                          [0]                                     #
+   Do Active Dead Gateway Detection?              no                              +
+Your CABLE Type                                     N/A                                 +
+ START TCP/IP daemons Now                            no                                +
+
+1=Help               F2=Refresh             F3=Cancel             F4=List
+Esc+5=Reset           Esc+6=Command          Esc+7=Edit            Esc+8=Image
+Esc+9=Shell           Esc+0=Exit             Enter=Do
+</code></pre><p>配置主网卡en0的IP地址、掩码和网关，按“Enter”。</p>
+<p>配置“Internet ADDRESS (dotted decimal)”为实际规划的IP地址，如“10.10.10.300”。<br>配置“Network MASK (hexadecimal or dotted decimal)”为实际规划的掩码，如“255.255.255.0”。<br>配置“Default Gateway”下的“Address (dotted decimal or symbolic name)”为实际规划的网关IP地址，如“10.10.10.1”。<br>退出smitty菜单导航工具。</p>
+<p>配置备网卡en2对应的IP地址和网关。<br>启动smitty菜单导航工具。</p>
+<pre><code># smitty tcpip
+</code></pre><p>选择导航菜单，按“Enter”。<br>—&gt; Minimum Configuration &amp; Startup<br>—&gt; en2 07-08 Standard Ethernet Network Interface<br>屏幕显示信息如下：</p>
+<pre><code>                         Minimum Configuration &amp; Startup
+
+  To Delete existing configuration data, please use Further Configuration menus
+
+Type or select values in entry fields.
+Press Enter AFTER making all desired changes.
+
+                                                        [Entry Fields]
+* HOSTNAME                                                [name01]
+* Internet ADDRESS (dotted decimal)                  [100.10.10.300]
+  Network MASK (dotted decimal)                      [255.255.255.0]
+* Network INTERFACE                                     en2
+ NAMESERVER
+       Internet ADDRESS (dotted decimal)         [ ]
+       DOMAIN Name                               [ ]
+ Default Gateway
+   Address (dotted decimal or symbolic name)     [10.10.10.1]
+   Cost                                          [0]                                     #
+   Do Active Dead Gateway Detection?              no                               +
+ Your CABLE Type                                     N/A                                  +
+ START TCP/IP daemons Now                            no                                 +
+
+1=Help               F2=Refresh             F3=Cancel             F4=List
+Esc+5=Reset           Esc+6=Command          Esc+7=Edit            Esc+8=Image
+Esc+9=Shell           Esc+0=Exit             Enter=Do
+</code></pre><p>配置备网卡en2的IP地址、掩码和网关，按“Enter”。<br>配置“Internet ADDRESS (dotted decimal)”为实际规划的IP地址，如“100.10.10.300”。<br>配置“Network MASK (hexadecimal or dotted decimal)”为实际规划的掩码，如“255.255.255.0”。<br>配置“Default Gateway”下的“Address (dotted decimal or symbolic name)”为实际规划的网关IP地址，如“10.10.10.1”。<br>退出smitty菜单导航工具。<br>以root用户登录双机中备节点，重复执行2～4。<br>修改/etc/hosts文件</p>
+<p>执行此任务可以根据现场主机名规划要求和IP地址规划要求修改/etc/hosts文件中的相关信息。</p>
+<p>背景信息</p>
+<p>执行此任务可以根据现场主机名规划要求和IP地址规划要求修改“/etc/hosts”文件中的相关信息。</p>
+<p>操作步骤</p>
+<p>以root用户登录双机中主节点。<br>编辑“/etc/hosts”文件。</p>
+<pre><code>#vi /etc/hosts
+</code></pre><p>修改文件中以下内容,具体请参考“双机组网IP地址规划”：</p>
+<pre><code>127.0.0.1  loopback localhost      name01  # loopback (lo0)name/address
+192.168.10.100   service_ip                       # 浮动IP地址和逻辑主机名。如果有多个浮动IP地址，请添加新的一行，输入浮动IP地址和对应的逻辑主机名
+
+10.10.10.10    name01_boot1   name01   # 主节点主用IP地址、主用网卡标签和主机名
+
+10.10.10.11    name02_boot1   name02   # 备节点主用IP地址、主用网卡标签和主机名
+
+100.10.10.10   name01_boot2                 # 主节点备用IP地址和备用网卡标签
+
+100.10.10.11  name02_boot2                 # 备节点备用IP地址和备用网卡标签
+
+192.168.10.200   name01_per     # 主节点persistent IP地址和persistent IP标签
+192.168.10.201   name02_per     # 备节点persistent IP地址和persistent IP标签
+</code></pre><p>以root用户登录双机中备节点，重复执行2。</p>
+<p>##配置心跳线TTY</p>
+<p>执行此任务可以配置TTY（Teletype）设备，作为双机的通信设备使心跳信号通信正常。</p>
+<p>背景信息</p>
+<p>执行此任务可以配置TTY（Teletype）设备，作为双机的通信设备使心跳信号通信正常。</p>
+<p>操作步骤</p>
+<p>以root用户登录双机中主节点。<br>检查TTY是否配置。</p>
+<pre><code>#lsdev -Cc tty
+</code></pre><p>屏幕显示信息如下：</p>
+<pre><code>tty0 Available 06-08-01-00 Asynchronous Terminal
+vty0 Available                Asynchronous Terminal
+vty1 Available                Asynchronous Terminal
+</code></pre><p>如果显示结果中含TTY标识的设备（一般为tty0），且状态为“Available”，则表示串口已经配置。</p>
+<p>如果没有配置TTY，请配置TTY。<br>启动smitty菜单导航工具。</p>
+<pre><code># smitty tty
+</code></pre><p>选择导航菜单，按“Enter”。<br>—&gt;Add a TTY<br>—&gt;tty rs232 Asynchronous Terminal<br>—&gt; sa0 Available 01-S1 Standard I/O Serial Port<br>屏幕显示信息如下：</p>
+<pre><code>Type or select values in entry fields.
+Press Enter AFTER making all desired changes.
+
+[TOP]                                                   [Entry Fields]
+  TTY type                                            tty
+ TTY interface                                       rs232
+  Description                                         Asynchronous Terminal
+ Parent adapter                                      sa0
+* PORT number                                        [0]                            +
+  Enable LOGIN                                        disable                      +
+  BAUD rate                                          []                            +
+  PARITY                                             [none]                        +
+ BITS per character                                 [8]                           +
+Number of STOP BITS                                [1]                           +
+TIME before advancing to next port setting         [0]                           +#
+ TERMINAL type                                      [dumb]
+ FLOW CONTROL to be used                            [xon]                         +
+ OPEN DISCIPLINE to be used                         [dtropen]                     +
+STTY attributes for RUN time                       [hupcl,cread,brkint,icrnl,opost,&gt; +
+STTY attributes for LOGIN                          [hupcl,cread,echoe,cs8]
+LOGGER name                                        []
+STATUS of device at BOOT time                      [available]                   +
+ STREAMS modules to be pushed at OPEN time          [ldterm]                      +
+Transparent Print ON String                        []
+Transparent Print OFF String                       []
+Transparent Print Maximum Characters per Second    []                            +#
+Transparent Print Maximum Character Packet Size    []                            +#
+Transparent Print Buffer Size                      []                            +#
+[MORE...24]
+
+F1=Help               F2=Refresh             F3=Cancel             F4=List
+Esc+5=Reset           Esc+6=Command          Esc+7=Edit            Esc+8=Image
+Esc+9=Shell           Esc+0=Exit             Enter=Do
+</code></pre><p>选择“PORT number”，在对应的值域框中输入端口号“0”，按“Enter”。<br>退出smitty菜单导航工具。<br>以root用户登录双机中备节点，重复执行2～3。<br>检查TTY连通性。<br>在双机中主节点检查连通性。</p>
+<pre><code># cat &lt; /dev/tty0
+</code></pre><p>以root用户登录双机中备节点检查连通性。</p>
+<pre><code># cat /etc/hosts &gt; /dev/tty0
+</code></pre><p>在双机中主节点上观察显示的数据是否正确，并确保没有乱码。<br>配置AIX系统互信文件</p>
+<p>执行此任务可以配置AIX系统互信文件/.rhosts，建立AIX系统之间的双机信任关系。</p>
+<p>背景信息</p>
+<p>执行此任务可以配置AIX系统互信文件“/.rhosts”，建立AIX系统之间的双机信任关系。</p>
+<p>信任关系指一台远程服务器的用户以相同的用户名接入到另外一台服务器，而无需提供口令。双机之间建立信任关系后，可以使用“rcp”和“rlogin”等命令。</p>
+<p>操作步骤</p>
+<p>以root用户登录双机中主节点。<br>创建“/.rhosts”文件。</p>
+<pre><code># vi /.rhosts
+</code></pre><p>在文件中添加以下内容：</p>
+<pre><code>service_ip             # 浮动IP地址对应的逻辑主机名。如果有多个浮动IP地址，请添加新的一行，输入浮动IP地址对应的逻辑主机名
+
+name01              # 主节点的主机名
+
+name02              # 备节点的主机名
+
+name01_boot1       # 主节点的主用网卡标签
+name02_boot1       # 备节点的主用网卡标签
+name01_boot2       # 主节点的备用网卡标签
+name02_boot2       # 备节点的备用网卡标签
+name01_per # 主节点persistent IP地址
+name02_per # 备节点persistent IP地址
+</code></pre><p> 注意：<br>“/.rhosts”文件中定义的主机名和网卡标签必须与“/etc/hosts”文件中定义的名称保持一致。</p>
+<p>修改“/.rhosts”文件权限。</p>
+<pre><code># chmod 600 /.rhosts
+</code></pre><p>以root用户登录双机中备节点，重复执行2～3。<br>检查信任关系是否建立成功。<br>在备节点以root用户验证信任关系是否建立成功。</p>
+<pre><code># rlogin name02
+</code></pre><p>正常情况下，能够以root用户登录到双机中主节点。</p>
+<p>在主节点以root用户验证信任关系是否建立成功。</p>
+<pre><code># rlogin name01
+</code></pre><p>正常情况下，能够以root用户登录到双机中备节点。</p>
+<p>配置HACMP集群互信文件</p>
+<p>执行此任务可以配置HACMP集群互信文件/usr/es/sbin/cluster/etc/rhosts。</p>
+<p>背景信息</p>
+<p>执行此任务可以配置HACMP集群互信文件“/usr/es/sbin/cluster/etc/rhosts”。</p>
+<p>操作步骤</p>
+<p>以root用户登录双机中主节点。<br>创建“/usr/es/sbin/cluster/etc/rhosts”文件。</p>
+<pre><code>#vi /usr/es/sbin/cluster/etc/rhosts
+</code></pre><p>在文件中添加以下内容：</p>
+<pre><code>Service_ip             # 浮动IP地址对应的逻辑主机名。如果有多个浮动IP地址，请添加新的一行，输入浮动IP地址对应的逻辑主机名
+
+name01              # 主节点的主机名
+
+name02              # 备节点的主机名
+
+name01_boot1       # 主节点的主用网卡标签
+name02_boot1       # 备节点的主用网卡标签
+name01_boot2       # 主节点的备用网卡标签
+name02_boot2       # 备节点的备用网卡标签
+name01_per # 主节点persistent IP地址
+name02_per # 备节点persistent IP地址
+</code></pre><p> 注意：<br>“/usr/es/sbin/cluster/etc/rhosts”文件中定义的主机名和网卡标签必须与“/etc/hosts”文件中定义的名称保持一致。</p>
+<p>以root用户登录双机中备节点，重复执行2。<br>启动双机配置程序</p>
+<p>选择其中一个节点完成以下操作，假设选择节点name1完成操作。</p>
+<p>输入命令：smit hacmp。</p>
+<p>按“Enter”后屏幕显示如下信息，表明已启动了双机配置程序。</p>
+<pre><code>HACMP for AIX
+
+Move cursor to desired item and press Enter.
+
+Initialization and Standard Configuration
+Extended Configuration
+System Management (C-SPOC)
+Problem Determination Tools
+</code></pre>
+            <!-- / the end of articles -->
+        </div>
+        <!-- / left section -->
+        
+        
+            <hr/>
+            <div id="disqus_thread" style=" margin-top: 15px; margin-bottom: 25px; "></div>
+            <script>
+                /**
+                *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                /*
+                var disqus_config = function () {
+                this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                };
+                */
+                (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+                s.src = 'https://morgan-hexo-theme.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        
+
+        <!-- Next Post and Prev Post -->
+        
+        <hr/>
+        <div class="next-prev-post-section">
+            
+                <a href="/2017/09/08/test/" class="styled-border">
+                    ←
+                    test
+                    
+                </a>
+            
+            
+                <a href="/2017/09/08/linux-vi-vim/" class="styled-border">
+                    
+                    linux vi/vim
+                    →
+                </a>
+            
+        </div>
+        
+</div>
+<script type="text/javascript">
+    let img = document.getElementsByTagName("img");
+    for(let i = 0; i < img.length; i++){
+        img[i].className += " ts fluid image";
+    }
+</script>
+<!-- / main section -->
+
+<!-- copyright -->
+<div class="ts attached secondary segment">
+    <div class="ts narrow container">
+        <br>
+        <div class="ts large center aligned header">
+            Powered by Hexo, Theme designs by @hpcslag.
+            <div class="smaller sub header">
+                Copyright © 左瑞宁 2017 
+            </div>
+        </div>
+        <br>
+    </div>
+</div>
+<!-- / copyright -->
+<script type="text/javascript">
+    
+    const slogans = ["Hallo, dit is mijn blog","嗨，這是我的博客!","안녕하세요, 제 블로그입니다.","Hi, This is my blog!","こんにちは、私のブログへようこそ!","مرحبا، مرحبا بك في مدونتي"];
+</script>
+<script src="/js/script.js"></script>
+</body>
+</html>
