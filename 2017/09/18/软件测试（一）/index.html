@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>软件测试（一） | Ruining.z Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="术语： “软件测试就是证明软件不存在错误的过程。” “软件测试的目的在于证明软件能够正确完成其预定的功能。” “软件测试就是建立一个‘软件做了其应该做的’信心的过程。”  这些定义都是本末倒置的。  每当测试一个程序时，应当想到要为程序增加一些价值。通过测试来增加程序的价值，是指测试提高了程序的可靠性或质量。提高了程序的可靠性，是指找 出并最终修改了程序的错误。  应该一开始就假设程序中隐藏着错">
+<meta name="keywords" content="软件测试">
+<meta property="og:type" content="article">
+<meta property="og:title" content="软件测试（一）">
+<meta property="og:url" content="http://zuoruining1.github.io/2017/09/18/软件测试（一）/index.html">
+<meta property="og:site_name" content="Ruining.z Blog">
+<meta property="og:description" content="术语： “软件测试就是证明软件不存在错误的过程。” “软件测试的目的在于证明软件能够正确完成其预定的功能。” “软件测试就是建立一个‘软件做了其应该做的’信心的过程。”  这些定义都是本末倒置的。  每当测试一个程序时，应当想到要为程序增加一些价值。通过测试来增加程序的价值，是指测试提高了程序的可靠性或质量。提高了程序的可靠性，是指找 出并最终修改了程序的错误。  应该一开始就假设程序中隐藏着错">
+<meta property="og:updated_time" content="2017-09-18T09:35:18.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="软件测试（一）">
+<meta name="twitter:description" content="术语： “软件测试就是证明软件不存在错误的过程。” “软件测试的目的在于证明软件能够正确完成其预定的功能。” “软件测试就是建立一个‘软件做了其应该做的’信心的过程。”  这些定义都是本末倒置的。  每当测试一个程序时，应当想到要为程序增加一些价值。通过测试来增加程序的价值，是指测试提高了程序的可靠性或质量。提高了程序的可靠性，是指找 出并最终修改了程序的错误。  应该一开始就假设程序中隐藏着错">
+  
+    <link rel="alternate" href="/atom.xml" title="Ruining.z Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+  <link rel="stylesheet" href="/css/tocas.css">
+  <link rel="stylesheet" href="/css/animate.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <style type="text/css">
+    a.title-link:hover{
+        color: #34b2db !important;
+    }
+
+    a.title-link:active{
+        color: #2075c1 !important;
+    }
+
+    #menu-color-id{
+        background : #F7F7F7;
+    }
+
+    #menu-color-id a{
+        color: #5a5a5a;
+    }
+  </style>
+  <script src="/js/tocas.js"></script>
+  
+
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+
+<body>
+<!-- navigation -->
+
+<div class="ts fluid basic link big menu" id="menu-color-id">
+
+    <!-- ejs : align to post page or index page -->
+        
+            <div class="ts very narrow container">
+        
+
+        
+            <a class="item" href="/">Home</a>
+        
+            <a class="item" href="/archives">Archives</a>
+        
+    </div>
+</div>
+<!-- the end of navigation -->
+
+<!-- big bang title -->
+<div class="ts padded horizontally fitted fluid slate" style="background-color: #00C5CD;">
+    <!-- ejs : align to post page or index page -->
+    
+        <div class="ts very narrow container">
+    
+        <!-- Title -->
+        <h1 class="ts eleven wide column header be-center-h1">
+            <span style="color: #404040;" id="big-title">Ruining.z Blog</span>
+            <div class="sub header" id="slogan-bar" style=" margin-top: 15px; color: #404040;"></div>
+        </h1>
+        <!-- the end of title -->
+    </div>
+</div>
+<!-- the end of big bang title -->
+
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+
+<!-- main section -->
+<div class="ts text container">
+        <!-- left section -->
+        <div class="column" style=" padding: 35px; ">
+            <!-- Articles -->
+                
+                <h1 class="ts header">
+                    <span style="color: #333;">软件测试（一）</span>
+                    <div class="sub header" style="color: #808080;">Publish: 2017/8/18 
+                     &nbsp;&nbsp;
+                        <ul class="unstyled radius-tag -list"><li class="unstyled radius-tag -list-item"><a class="unstyled radius-tag -list-link" href="/tags/软件测试/">软件测试</a></li></ul>
+                    
+                    </div>
+                </h1>
+
+                <script src="/assets/js/APlayer.min.js"> </script><h3 id="术语："><a href="#术语：" class="headerlink" title="术语："></a>术语：</h3><blockquote>
+<p>“软件测试就是证明软件不存在错误的过程。”</p>
+<p>“软件测试的目的在于证明软件能够正确完成其预定的功能。”</p>
+<p>“软件测试就是建立一个‘软件做了其应该做的’信心的过程。”</p>
+</blockquote>
+<p>这些定义都是本末倒置的。 </p>
+<p>每当测试一个程序时，应当想到要为程序增加一些价值。通过测试来增加程<br>序的价值，是指测试提高了程序的可靠性或质量。提高了程序的可靠性，是指找 出并最终修改了程序的错误。</p>
+<blockquote>
+<p>应该一开始就假设程序中隐藏着错误(这种假设对于几乎所有的程序都成立)，然后测试程 序，发现尽可能多的错误。</p>
+<p><br><br>定义：<strong>测试就是发现错误而执行程序的过程。</strong></p>
+<p>给自己一个心理设定：就是要找出程序中的错误。</p>
+</blockquote>
+<p>人类行为总是倾向于具有高度目标性，确立一个正确的目标有着重要的心理 学影响。如果我们的目的是证明程序中不存在错误，那就会在潜意识中倾向于实 现这个目标;也就是说，我们会倾向于选择可能较少导致程序失效的测试数据。 另一方面，如果我们的目标在于证明程序中存在错误，我们设计的测试数据就有 可能更多地发现问题。</p>
+<p> <strong>什么是“成功的测试”和“不成功的测试”</strong></p>
+<p> 在大多数情况下，未能找出错误的测试被认为是“不成 功的”，这是因为认为软件中不包含错误的观点基本上是不切实际的（例子：患者看病）</p>
+<p> 总结：<br> 软件测试更适宜被视为试图发现程序中错误(假设其存在)的破 坏性的过程。一个成功的测试用例，通过诱发程序发生错误，可以在这个方向上 促进软件质量的改进。</p>
+<blockquote>
+<p>测试投入的目标在 于通过有限的测试用例，最大限度地提高发现的问题的数量，以取得最好的测试 效果。</p>
+</blockquote>
+
+            <!-- / the end of articles -->
+        </div>
+        <!-- / left section -->
+        
+        
+            <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a><a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a><a href="#" class="bds_evernotecn" data-cmd="evernotecn" title="分享到印象笔记"></a><a href="#" class="bds_copy" data-cmd="copy" title="分享到复制网址"></a></div>
+            <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["weixin","qzone","tsina","tqq","douban","sqq","evernotecn","copy"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["weixin","qzone","tsina","tqq","douban","sqq","evernotecn","copy"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+            <!-- 来必力City版安装代码 -->
+            <div id="lv-container" data-id="city" data-uid="MTAyMC8zMDYxOS83MTc0">
+                    <script type="text/javascript">
+                           (function(d, s) {
+                               var j, e = d.getElementsByTagName(s)[0];
+                            
+                                  if (typeof LivereTower === 'function') { return; }
+                            
+                                    j = d.createElement(s);
+                                    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                                    j.async = true;
+    
+                           e.parentNode.insertBefore(j, e);
+                           })(document, 'script');
+                      </script>
+                 <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+             </div>
+             <!-- City版安装代码已完成 -->
+        
+
+        <!-- Next Post and Prev Post -->
+        
+        <hr/>
+        <div class="next-prev-post-section">
+            
+                <a href="#"></a>
+            
+            
+                <a href="/2017/09/15/《斯通纳》摘抄集/" class="styled-border">
+                    
+                    《斯通纳》摘抄集
+                    →
+                </a>
+            
+        </div>
+        
+</div>
+<script type="text/javascript">
+    let img = document.getElementsByTagName("img");
+    for(let i = 0; i < img.length; i++){
+        img[i].className += " ts fluid image";
+    }
+</script>
+<!-- / main section -->
+
+<!-- copyright -->
+<div class="ts attached secondary segment">
+    <div class="ts narrow container">
+        <br>
+        <div class="ts large center aligned header">
+            Powered by <a href="https://hexo.io">&nbsp;Hexo</a>, Theme designs by <a href="https://github.com/hpcslag">&nbsp;@hpcslag</a>.
+            <div class="smaller sub header">
+                Copyright ©<a href="http://weibo.com/xinaogudu">&nbsp;左瑞宁</a> 2017
+            </div>
+        </div>
+        <br>
+    </div>
+</div>
+<!-- / copyright -->
+<script type="text/javascript">
+    
+    const slogans = ["Hallo, dit is mijn blog","嗨，這是我的博客!","안녕하세요, 제 블로그입니다.","Hi, This is my blog!","こんにちは、私のブログへようこそ!","مرحبا، مرحبا بك في مدونتي"];
+</script>
+<script src="/js/script.js"></script>
+</body>
+</html>
