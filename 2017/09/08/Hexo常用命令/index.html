@@ -35,17 +35,17 @@
 <link rel="canonical" href="http://zuoruining1.github.io/2017/09/08/Hexo常用命令/"/>
 
 
-<meta name="description" content="Hexonpm install hexo -g #安装 npm update hexo -g #更新 hexo init #初始化">
+<meta name="description" content="Hexo123npm install hexo -g #安装npm update hexo -g #更新hexo init #初始化">
 <meta name="keywords" content="Hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo常用命令">
 <meta property="og:url" content="http://zuoruining1.github.io/2017/09/08/Hexo常用命令/index.html">
 <meta property="og:site_name" content="Ruining.z Blog">
-<meta property="og:description" content="Hexonpm install hexo -g #安装 npm update hexo -g #更新 hexo init #初始化">
+<meta property="og:description" content="Hexo123npm install hexo -g #安装npm update hexo -g #更新hexo init #初始化">
 <meta property="og:updated_time" content="2017-12-10T20:00:29.232Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo常用命令">
-<meta name="twitter:description" content="Hexonpm install hexo -g #安装 npm update hexo -g #更新 hexo init #初始化">
+<meta name="twitter:description" content="Hexo123npm install hexo -g #安装npm update hexo -g #更新hexo init #初始化">
 
 
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=1.1" />
@@ -129,30 +129,13 @@
 
     
             <div class="post-content">
-            <script src="/assets/js/APlayer.min.js"> </script><h3 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo -g <span class="token comment" spellcheck="true">#安装</span>
-<span class="token function">npm</span> update hexo -g <span class="token comment" spellcheck="true">#更新</span>
-hexo init <span class="token comment" spellcheck="true">#初始化</span>
-</code></pre>
+            <script src="/assets/js/APlayer.min.js"> </script><h3 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">npm install hexo -g <span class="comment">#安装</span></div><div class="line">npm update hexo -g <span class="comment">#更新</span></div><div class="line">hexo init <span class="comment">#初始化</span></div></pre></td></tr></table></figure>
 <a id="more"></a>
-<h3 id="草稿"><a href="#草稿" class="headerlink" title="草稿"></a>草稿</h3><pre class=" language-bash"><code class="language-bash"> hexo publish <span class="token punctuation">[</span>layout<span class="token punctuation">]</span> <span class="token operator">&lt;</span>title<span class="token operator">></span> <span class="token comment" spellcheck="true">#发表草稿。</span>
-</code></pre>
-<h3 id="写作"><a href="#写作" class="headerlink" title="写作"></a>写作</h3><pre class=" language-bash"><code class="language-bash">hexo n <span class="token string">"name"</span> <span class="token comment" spellcheck="true">#新建文章</span>
-hexo g <span class="token comment" spellcheck="true">#生成静态网页</span>
-hexo p <span class="token comment" spellcheck="true">#发表草稿。</span>
-hexo s <span class="token comment" spellcheck="true">#启动服务</span>
-hexo d <span class="token comment" spellcheck="true">#部署网站 参数：-g 部署之前先生成静态文件。</span>
-</code></pre>
+<h3 id="草稿"><a href="#草稿" class="headerlink" title="草稿"></a>草稿</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo publish [layout] &lt;title&gt; <span class="comment">#发表草稿。</span></div></pre></td></tr></table></figure>
+<h3 id="写作"><a href="#写作" class="headerlink" title="写作"></a>写作</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">hexo n <span class="string">"name"</span> <span class="comment">#新建文章</span></div><div class="line">hexo g <span class="comment">#生成静态网页</span></div><div class="line">hexo p <span class="comment">#发表草稿。</span></div><div class="line">hexo s <span class="comment">#启动服务</span></div><div class="line">hexo d <span class="comment">#部署网站 参数：-g 部署之前先生成静态文件。</span></div></pre></td></tr></table></figure>
 <h1 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h1><p> Hexo 3.0 把服务器独立成了个别模块，您必须先安装才能使用。</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-server --save <span class="token comment" spellcheck="true">#安装服务</span>
-
-hexo s <span class="token comment" spellcheck="true">#启动服务</span>
-hexo server -p 5000 <span class="token comment" spellcheck="true">#更改端口</span>
-hexo s -s <span class="token comment" spellcheck="true">#静态模式</span>
-hexo s -i 192.168.1.1 <span class="token comment" spellcheck="true">#自定义ip</span>
-
-hexo clean <span class="token comment" spellcheck="true">#清除缓存</span>
-</code></pre>
-<h1 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h1><pre class=" language-bash"><code class="language-bash">hexo d -g
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">npm install hexo-server --save <span class="comment">#安装服务</span></div><div class="line">    </div><div class="line">hexo s <span class="comment">#启动服务</span></div><div class="line">hexo server -p 5000 <span class="comment">#更改端口</span></div><div class="line">hexo s -s <span class="comment">#静态模式</span></div><div class="line">hexo s -i 192.168.1.1 <span class="comment">#自定义ip</span></div><div class="line">    </div><div class="line">hexo clean <span class="comment">#清除缓存</span></div></pre></td></tr></table></figure>
+<h1 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h1><pre><code class="bash">hexo d -g
 hexo g -d
 </code></pre>
 <p>两者作用完全相同。</p>

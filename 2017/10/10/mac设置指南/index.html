@@ -242,11 +242,9 @@
 <h3 id="设置-Trackpad-轻点来点按"><a href="#设置-Trackpad-轻点来点按" class="headerlink" title="设置 Trackpad 轻点来点按"></a>设置 Trackpad 轻点来点按</h3><p>默认情况下按下触摸板才是点按（click）。我喜欢设置成用轻点作为点按：</p>
 <p>选择<code>System Preferences</code> &gt; <code>Trackpad</code>，在<code>Point &amp; Click</code>标签页中选中<code>Tap to click</code>。</p>
 <h3 id="语音"><a href="#语音" class="headerlink" title="语音"></a>语音</h3><p>OS X 自带了语音功能，可以用<code>say</code>命令让 Mac 开口说话：</p>
-<pre class=" language-sh"><code class="language-sh">say hello
-</code></pre>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">say hello</div></pre></td></tr></table></figure>
 <p>可以和<code>&amp;&amp;</code>或者<code>;</code>配合使用来提示你某任务已经完成：</p>
-<pre class=" language-sh"><code class="language-sh">brew update && brew upgrade && brew cleanup ; say mission complete
-</code></pre>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew update &amp;&amp; brew upgrade &amp;&amp; brew cleanup ; say mission complete</div></pre></td></tr></table></figure>
 <p>通过命令行来听取发音还是有点麻烦。其实我们几乎可以在任何地方选中单词，然后使用快捷键<code>⌥+ESC</code>发音。仅仅需要这样设置一下：选择<code>System Preferences</code> &gt; <code>Dictation &amp; Speech</code>，在<code>Text to Speech</code>标签页中选中<code>Speak selected text when the key is pressed</code>。</p>
 <h3 id="词典"><a href="#词典" class="headerlink" title="词典"></a>词典</h3><p>OS X 自带了词典（Dictionary）。你几乎可以在任何应用中通过三指轻拍触摸板来现实对应单词的释义。</p>
 <p>也可以打开 Dictionary 应用来查找单词。</p>
@@ -259,20 +257,16 @@
 <p>默认情况下 Dock 被一堆系统自带的应用占据着，而其中大部分我都很少使用，当我打开几个常用应用后，Dock 上会有很多图标，每个图标都会被挤得很小。所以我会把所有 Dock 上固定的图标都删掉，这样一来 Dock 上只有我打开的应用。</p>
 <p>PS：Finder 图标是删不掉的。</p>
 <p>除了一个一个删除图标，也可以通过这个命令来隐藏所有的固定图标：</p>
-<pre class=" language-sh"><code class="language-sh">defaults write com.apple.dock static-only -boolean true; killall Dock
-</code></pre>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">defaults write com.apple.dock static-only -boolean <span class="literal">true</span>; killall Dock</div></pre></td></tr></table></figure>
 <p>恢复也非常简单：</p>
-<pre class=" language-sh"><code class="language-sh">defaults delete com.apple.dock static-only; killall Dock
-</code></pre>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">defaults delete com.apple.dock static-only; killall Dock</div></pre></td></tr></table></figure>
 <p>PS：使用这个方法的话，Dock 上的<code>Downloads</code>也会被隐藏掉。</p>
 <h3 id="重置-Launchpad-上图标位置-OCD"><a href="#重置-Launchpad-上图标位置-OCD" class="headerlink" title="重置 Launchpad 上图标位置[OCD]"></a>重置 Launchpad 上图标位置[OCD]</h3><p>本条目对于强迫症适用。</p>
 <p>新的应用被安装后，经常会跑到 Launchpad 的第一屏，所以它们的位置跟安装的顺序有关系，而我更希望它们可以按照某种更加稳定的顺序排列，比如按照系统默认的顺序：</p>
-<pre class=" language-sh"><code class="language-sh">defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock
-</code></pre>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">defaults write com.apple.dock ResetLaunchPad -bool <span class="literal">true</span>; killall Dock</div></pre></td></tr></table></figure>
 <p>在默认顺序中，Launchpad 第一屏只有 Apple 自家应用。</p>
 <h3 id="创建大小写敏感的工作区"><a href="#创建大小写敏感的工作区" class="headerlink" title="创建大小写敏感的工作区"></a>创建大小写敏感的工作区</h3><p>在多人合作的项目开发时，因为 Mac 文件系统默认是大小写不敏感的，所以经常会出现一些诡异的问题。创建一个大小写敏感的工作区（workspace）来解决避免这些问题：</p>
-<pre class=" language-sh"><code class="language-sh">hdiutil create -type SPARSE -fs 'Case-sensitive Journaled HFS+' -size 100g -volname workspace ~/Documents/workspace.dmg.sparseimage
-</code></pre>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hdiutil create -<span class="built_in">type</span> SPARSE -fs <span class="string">'Case-sensitive Journaled HFS+'</span> -size 100g -volname workspace ~/Documents/workspace.dmg.sparseimage</div></pre></td></tr></table></figure>
 <p>可以通过三种方式挂载镜像：</p>
 <ol>
 <li>直接双击打开 <code>~/Documents/workspace.dmg.sparseimage</code></li>
@@ -284,8 +278,7 @@
 <h3 id="Homebrew"><a href="#Homebrew" class="headerlink" title="Homebrew"></a><a href="http://brew.sh" target="_blank" rel="external">Homebrew</a></h3><p>包管理工具，官方称之为<code>The missing package manager for OS X</code>。</p>
 <p>安装步骤见官网。</p>
 <p>有了 brew 以后，要下载工具，比如 MySQL、Gradle、Maven、Node.js 等工具，就不需要去网上下载了，只要一行命令就能搞定：</p>
-<pre class=" language-sh"><code class="language-sh">brew install mysql gradle maven node
-</code></pre>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install mysql gradle maven node</div></pre></td></tr></table></figure>
 <p>PS：安装 brew 的时候会自动下载和安装 Apple 的 Command Line Tools。</p>
 <p>brew 的替代品有 <a href="https://www.macports.org/" target="_blank" rel="external">MacPorts</a>，现在基本没人用它。</p>
 <h3 id="Homebrew-Cask"><a href="#Homebrew-Cask" class="headerlink" title="Homebrew Cask"></a><a href="https://caskroom.github.io" target="_blank" rel="external">Homebrew Cask</a></h3><p>brew-cask 允许你使用命令行安装 OS X 应用。比如你可以这样安装 Chrome：<code>brew cask install google-chrome</code>。还有 Evernote、Skype、Sublime Text、VirtualBox 等都可以用 brew-cask 安装。</p>
@@ -295,8 +288,7 @@
 <p>几乎所有常用的应用都可以通过 brew-cask 安装，而且是从应用的官网上下载，所以你要安装新的应用时，建议用 brew-cask 安装。如果你不知道应用在 brew-cask 中的 ID，可以先用<code>brew cask search</code>命令搜索。</p>
 <h3 id="iTerm2"><a href="#iTerm2" class="headerlink" title="iTerm2"></a><a href="https://www.iterm2.com/" target="_blank" rel="external">iTerm2</a></h3><p>iTerm2 是最常用的终端应用，是 Terminal 应用的替代品。提供了诸如<code>Split Panes</code>等<a href="https://www.iterm2.com/features.html" target="_blank" rel="external">一群实用特性</a>。它默认的黑色背景让我毫不犹豫的抛弃了 Terminal。</p>
 <p>安装：</p>
-<pre class=" language-sh"><code class="language-sh">brew cask install iterm2
-</code></pre>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew cask install iterm2</div></pre></td></tr></table></figure>
 <p>感谢 brew-cask，我们可以通过命令行自动安装 iTerm2 了。</p>
 <p>在终端里，除了可以用<code>⌃E</code>等快捷键（详见<a href="#其他快捷键">其他快捷键</a>）之外，还可以使用<code>⌥B</code>、<code>⌥F</code>等快捷键（具体可以参考<a href="http://ss64.com/bash/syntax-keyboard.html" target="_blank" rel="external">这里</a>）。前提是这样设置一下：</p>
 <p>选择<code>Iterm</code>菜单 &gt; <code>Preferences</code> &gt; <code>Profiles</code>，选择你在使用的 Profile（默认是<code>Default</code>），在<code>Keys</code>标签页中把<code>Left option (⌥) key acts as</code>和<code>Right option (⌥) key acts as</code>都设置成<code>+ESC</code>。</p>
@@ -310,16 +302,15 @@
 <p>Oh My Zsh 使用了 Z shell（zsh），一个和 Bash 相似的 Shell，而非 Bash。</p>
 <p>在 Z shell 中，<code>~/.zshrc</code>是最重要的配置文件。Oh My Zsh 在安装的时候会把当前环境的<code>$PATH</code>写入<code>~/.zshrc</code>中。这并不是我期望的行为，因为使用了 brew，我们基本不再需要去定制<code>$PATH</code>，而 Oh My Zsh 提供的默认<code>$PATH</code>值<code>$HOME/bin:/usr/local/bin:$PATH</code>是非常合适的一个值，它把<code>$HOME/bin</code>加入了<code>$PATH</code>，可以让我们把自己用的脚本放到<code>$HOME/bin</code>下。</p>
 <p>所以建议把<code>~/.zshrc</code>重置：</p>
-<pre class=" language-sh"><code class="language-sh">cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
-</code></pre>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc</div></pre></td></tr></table></figure>
 <blockquote>
 <p><a href="https://github.com/robbyrussell/oh-my-zsh/commit/551abfcbb48a0c001eadef80abc3276af4e9ad26" target="_blank" rel="external">2016年6月17号的一次提交</a>后，<code>zshrc.zsh-template</code>就不再修改<code>$PATH</code>了。请找到<code># export PATH=$HOME/bin:/usr/local/bin:$PATH</code>这一行，把前面的<code>#</code>去掉。</p>
 </blockquote>
 <p>Oh My Zsh 还有很多<a href="https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins-Overview" target="_blank" rel="external">有价值的插件</a>。</p>
 <p>替代品有 <a href="https://github.com/oh-my-fish/oh-my-fish" target="_blank" rel="external">Oh My Fish</a>。基于 <a href="http://fishshell.com/" target="_blank" rel="external">Fishshell</a> 。</p>
 <h3 id="Stow"><a href="#Stow" class="headerlink" title="Stow"></a><a href="http://www.gnu.org/software/stow/" target="_blank" rel="external">Stow</a></h3><p>GNU stow 是管理符号链接（symlink）的一个小公举。主要用于 symlink 你的 <a href="http://dotfiles.github.io/" target="_blank" rel="external">dotfiles</a> 如 emacs，git，fish/zsh 的配置文件。安装只需要</p>
-<pre><code>brew install stow
-</code></pre><p>安装了 stow 之后，我们可以开始 symlink 一些 dotfiles 了。完整使用 stow 和 dotfiles 的流程可以参考 <a href="https://github.com/jcouyang/dotfiles" target="_blank" rel="external">https://github.com/jcouyang/dotfiles</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install stow</div></pre></td></tr></table></figure>
+<p>安装了 stow 之后，我们可以开始 symlink 一些 dotfiles 了。完整使用 stow 和 dotfiles 的流程可以参考 <a href="https://github.com/jcouyang/dotfiles" target="_blank" rel="external">https://github.com/jcouyang/dotfiles</a></p>
 <p>当你的 dotfiles 都妥妥的 symlink 到 <code>~/dotfiles</code> 后，push 到 github 上就再也不怕换电脑了。</p>
 <h3 id="Git-常用别名"><a href="#Git-常用别名" class="headerlink" title="Git 常用别名"></a>Git 常用别名</h3><p>几乎每个人都会使用一些方法比如 Git 别名来提高效率，几乎所有人都会把使用<code>git st</code>来代替<code>git status</code>。然而这需要手动设置，每个人也都不完全一样。</p>
 <p>Oh My Zsh 提供了一套系统别名（alias），来达到相同的功能。比如<code>gst</code>作为<code>git status</code>的别名。而且 Git 插件是 Oh My Zsh 默认启用的，相当于你使用了 Oh My Zsh，你就拥有了一套高效率的别名，而且还是全球通用的。是不是棒棒哒？下面是一些我常用的别名：</p>
@@ -397,26 +388,22 @@
 <h3 id="Scroll-Reverser"><a href="#Scroll-Reverser" class="headerlink" title="Scroll Reverser"></a>Scroll Reverser</h3><p>当你在浏览一个很长的网页时，你看完了当前显示的内容，想要看后续的内容，你可以在 Trackpad 上双指上滑，或者鼠标滚轮向上滚动。这是被称作“自然”的滚动方向。</p>
 <p>然而在 Windows 里鼠标滚动的行为是相反的：鼠标滚轮向下滚动才会让浏览器显示后续的内容，向上滚动会达到页面的顶部。你可以在 OS X 的系统偏好设置里修改（选择<code>System Preferences</code> &gt; <code>Trackpad</code>，在<code>Scroll &amp; Zoom</code>标签页中不选中<code>Scroll direction: natural</code>），但是这样会同时改变鼠标滚轮的方向和 Trackpad 的方向。</p>
 <p>要想只改变鼠标滚轮的方向，而保持 Trackpad 依旧是“自然”的，我们需要 Scroll Reverser：</p>
-<pre class=" language-sh"><code class="language-sh">brew cask install scroll-reverser
-</code></pre>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew cask install scroll-reverser</div></pre></td></tr></table></figure>
 <p>PS：这货会让三指点击失效</p>
 <h3 id="ShiftIt"><a href="#ShiftIt" class="headerlink" title="ShiftIt"></a>ShiftIt</h3><p>原生 OS X 下只能手动调整窗口大小，所以我们需要窗口管理工具。我用过很多窗口管理工具，可惜大部分工具都存在快捷键冲突的问题（对我来说主要是 IntelliJ IDEA）。ShiftIt 是少见的没有冲突的窗口管理工具：</p>
-<pre class=" language-sh"><code class="language-sh">brew cask install shiftit
-</code></pre>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew cask install shiftit</div></pre></td></tr></table></figure>
 <p>PS：ShiftIt的旧版本需要安装 X11，最新版本已经修正了这个问题。</p>
 <p>替代者有 SizeUp，主要快捷键和 ShiftIt 相同。</p>
 <p>当然如果喜欢 hacking，<a href="https://github.com/jigish/slate" target="_blank" rel="external">Slate</a>  是个不错的 hackable 的窗口管理工具。配置可以参照 <a href="http://thume.ca/howto/2012/11/19/using-slate/" target="_blank" rel="external">http://thume.ca/howto/2012/11/19/using-slate/</a></p>
 <h3 id="Sublime-Text-2"><a href="#Sublime-Text-2" class="headerlink" title="Sublime Text 2"></a>Sublime Text 2</h3><p>安装：</p>
-<pre class=" language-sh"><code class="language-sh">brew cask install sublime-text
-</code></pre>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew cask install sublime-text</div></pre></td></tr></table></figure>
 <p>在命令行中指定使用 Sublime Text 打开某文件，是一个非常常用的功能，一般我们会按照 <a href="https://www.sublimetext.com/docs/2/osx_command_line.html" target="_blank" rel="external">OS X Command Line</a> 中所说执行 <code>ln -s &quot;/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl&quot; ~/bin/subl</code> 来增加<code>subl</code>链接。但是如果你用 brew-cask 安装的话，恭喜你，你不需要运行这个命令，因为 brew-cask 自动帮你做了这件事情。而且你卸载 Sublime Text 的时候 brew-cask 会自动删掉这个链接。</p>
 <p>同时 Oh My Zsh 也提供了 Sublime Text 插件，叫做<code>sublime</code>。参考：<a href="https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/sublime" target="_blank" rel="external">https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/sublime</a>，这个插件和通过 brew-cask 安装的 Sublime Text 完美兼容。</p>
 <p>替代品有 Atom、TextMate、Sublime Text 3 等，跟 Sublime Text 2 一样，用 brew-cask 安装的话命令行工具会被自动加入<code>$PATH</code>。</p>
 <h3 id="MacDown"><a href="#MacDown" class="headerlink" title="MacDown"></a>MacDown</h3><p>MacDown 是 Markdown 编辑器。由于 Mou 一直不支持代码高亮，我就转向了 MacDown。完美支持 <a href="https://help.github.com/articles/github-flavored-markdown/" target="_blank" rel="external">GFM</a>。</p>
 <p>我特别喜欢 <a href="https://daringfireball.net/projects/markdown/" target="_blank" rel="external">Markdown</a>，我用 Makdown 来写文章（包括本文），写幻灯片（<a href="https://github.com/hakimel/reveal.js/" target="_blank" rel="external">reveal.js</a>）。Markdown 可以让我专注于内容本身，而无需花精力在排版和样式上。</p>
 <p>安装：</p>
-<pre class=" language-sh"><code class="language-sh">brew cask install macdown
-</code></pre>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew cask install macdown</div></pre></td></tr></table></figure>
 <h3 id="z"><a href="#z" class="headerlink" title="z"></a>z</h3><p>在打开终端后，你是怎么进入项目的工作目录？是<code>cd xxx</code>，<code>⌃R</code>还是用别名？</p>
 <p><a href="https://github.com/rupa/z" target="_blank" rel="external">z</a> 工具可以帮你快速进入目录。比如在我的 Mac 上运行<code>z cask</code>就会进入<code>/usr/local/Library/Taps/caskroom/homebrew-cask/Casks</code>目录。</p>
 <p>这货的安装非常方便，甚至都不需要下载任何东西，因为它已经整合在了 Oh My Zsh 中。编辑<code>~/.zshrc</code>文件，在<code>plugins=(git)</code>这行中加上<code>z</code>变成<code>plugins=(git z)</code>，然后运行<code>source ~/.zshrc</code>重新加载配置文件，就可以使用 z 了。</p>
@@ -426,49 +413,32 @@
 <p>其他浏览器也有类似的工具，比如 FireFox 的 <a href="https://github.com/mooz/keysnail" target="_blank" rel="external">KeySnail</a>。</p>
 <h3 id="LastPass"><a href="#LastPass" class="headerlink" title="LastPass"></a><a href="https://lastpass.com" target="_blank" rel="external">LastPass</a></h3><p>LastPass 是管理密码的工具，支持二次验证，提供所有浏览器插件以及 Mac 桌面版本。</p>
 <p>最重要的是，它提供 <strong>命令行</strong> 的版本，可以直接通过 brew 安装</p>
-<pre class=" language-sh"><code class="language-sh">brew install lastpass-cli --with-pinentry
-</code></pre>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install lastpass-cli --with-pinentry</div></pre></td></tr></table></figure>
 <p>之后，只需要登陆：</p>
-<pre class=" language-sh"><code class="language-sh">lpass login you@email.com
-</code></pre>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">lpass login you@email.com</div></pre></td></tr></table></figure>
 <p>就可以拷贝密码或者集成到其他命令中了：</p>
-<pre class=" language-sh"><code class="language-sh">lpass show --password gmail.com -c
-</code></pre>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">lpass show --password gmail.com -c</div></pre></td></tr></table></figure>
 <h3 id="SourceTree"><a href="#SourceTree" class="headerlink" title="SourceTree"></a><a href="https://www.sourcetreeapp.com/" target="_blank" rel="external">SourceTree</a></h3><p>SourceTree 是 Atlassian 公司出品的一款优秀的 Git 图形化客户端。如果你发现命令行无法满足你的要求，可以试试 SourceTree。</p>
 <p>安装：</p>
-<pre class=" language-sh"><code class="language-sh">brew cask install sourcetree
-</code></pre>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew cask install sourcetree</div></pre></td></tr></table></figure>
 <p>用 brew-cask 安装会自动增加命令行工具<code>stree</code>到<code>$PATH</code>里。在命令行中输入<code>stree</code>可以快速用 SourceTree 打开当前 Git 仓库。详细用法请参见<code>stree --help</code>。</p>
 <h3 id="CheatSheet"><a href="#CheatSheet" class="headerlink" title="CheatSheet"></a><a href="http://www.mediaatelier.com/CheatSheet/" target="_blank" rel="external">CheatSheet</a></h3><p>CheatSheet 能够显示当前程序的快捷键列表，默认的快捷键是长按<code>⌘</code>。</p>
 <p><img src="http://www.mediaatelier.com/CheatSheet/imgs/main.png" alt="CheatSheet"></p>
 <p>安装：</p>
-<pre class=" language-sh"><code class="language-sh">brew cask install cheatsheet
-</code></pre>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew cask install cheatsheet</div></pre></td></tr></table></figure>
 <h3 id="Alfred"><a href="#Alfred" class="headerlink" title="Alfred"></a><a href="https://www.alfredapp.com" target="_blank" rel="external">Alfred</a></h3><p>Mac 用户不用鼠标键盘的必备神器，配合大量 Workflows，习惯之后可以大大减少操作时间。</p>
 <p>上手简单，调教成本在后期自定义 Workflows，不过有大量雷锋使用者提供的现成扩展，访问<a href="http://www.alfredworkflow.com/" target="_blank" rel="external">这里</a>挑选喜欢的，并可以极其简单地根据自己的需要修改。</p>
 <p>安装：</p>
-<pre class=" language-sh"><code class="language-sh">brew cask install alfred
-</code></pre>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew cask install alfred</div></pre></td></tr></table></figure>
 <h2 id="3-开发工具"><a href="#3-开发工具" class="headerlink" title="3. 开发工具"></a>3. 开发工具</h2><h3 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h3><p>现在 OS X 都不会自带 JDK 了，所以进行 Java 开发的话，需要下载 JDK。在 brew-cask 之前，我们需要从 <a href="https://developer.apple.com/downloads/" target="_blank" rel="external">https://developer.apple.com/downloads/</a> 或者 Oracle 网站上下载。还有更麻烦的－－卸载 JDK 和升级 JDK。</p>
 <p>JDK 安装文件是 pkg 格式，卸载和<code>.app</code>不一样，且没有自动卸载方式。</p>
 <p>而 brew-cask 提供了自动安装和卸载功能，能够自动从官网上下载并安装 JDK 8。</p>
-<pre class=" language-sh"><code class="language-sh">brew cask install java
-</code></pre>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew cask install java</div></pre></td></tr></table></figure>
 <p>如果你需要安装 JDK 7 或者 JDK 6，可以使用<code>homebrew-cask-versions</code>：</p>
-<pre class=" language-sh"><code class="language-sh">brew tap caskroom/versions
-brew cask install java6
-</code></pre>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">brew tap caskroom/versions</div><div class="line">brew cask install java6</div></pre></td></tr></table></figure>
 <p>在 OS X 上，你可以同时安装多个版本的 JDK。你可以通过命令<code>/usr/libexec/java_home -V</code>来查看安装了哪几个 JDK。</p>
 <p>那问题来了，当你运行<code>java</code>或者 Java 程序时使用的是哪个 JDK 呢？在 OS X 下，<code>java</code>也就是<code>/usr/bin/java</code>在默认情况下指向的是已经安装的最新版本。但是你可以设置环境变量<code>JAVA_HOME</code>来更改其指向：</p>
-<pre class=" language-sh"><code class="language-sh">$ java -version
-java version "1.8.0_60"
-Java(TM) SE Runtime Environment (build 1.8.0_60-b27)
-Java HotSpot(TM) 64-Bit Server VM (build 25.60-b23, mixed mode)
-$ JAVA_HOME=/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home java -version
-java version "1.6.0_65"
-Java(TM) SE Runtime Environment (build 1.6.0_65-b14-466.1-11M4716)
-Java HotSpot(TM) 64-Bit Server VM (build 20.65-b04-466.1, mixed mode)
-</code></pre>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$ java -version</div><div class="line">java version <span class="string">"1.8.0_60"</span></div><div class="line">Java(TM) SE Runtime Environment (build 1.8.0_60-b27)</div><div class="line">Java HotSpot(TM) 64-Bit Server VM (build 25.60-b23, mixed mode)</div><div class="line">$ JAVA_HOME=/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home java -version</div><div class="line">java version <span class="string">"1.6.0_65"</span></div><div class="line">Java(TM) SE Runtime Environment (build 1.6.0_65-b14-466.1-11M4716)</div><div class="line">Java HotSpot(TM) 64-Bit Server VM (build 20.65-b04-466.1, mixed mode)</div></pre></td></tr></table></figure>
 <p>其中<code>JAVA_HOME=/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home</code>可以用<code>JAVA_HOME=`/usr/libexec/java_home -v 1.6` </code>这种更加通用的方式代替。</p>
 <h3 id="jEnv"><a href="#jEnv" class="headerlink" title="jEnv"></a><a href="https://github.com/gcuisinier/jenv" target="_blank" rel="external">jEnv</a></h3><p>也可以使用 jEnv 来管理不同版本的 JDK，这个工具跟 <a href="#rbenv">rbenv</a> 类似，通过当前目录下的<code>.java-version</code>来决定使用哪个 JDK。jEnv 也可以用 brew 安装。不过要使用 jEnv 要有几个问题：</p>
 <ul>
@@ -480,13 +450,9 @@ Java HotSpot(TM) 64-Bit Server VM (build 20.65-b04-466.1, mixed mode)
 </ul>
 <p>所以我建议不要使用 jEnv。</p>
 <h3 id="民间使用的-Java-版本切换方法"><a href="#民间使用的-Java-版本切换方法" class="headerlink" title="民间使用的 Java 版本切换方法"></a>民间使用的 Java 版本切换方法</h3><p>添加以下脚本到当前 shell 配置文件中：<code>~/.zprofile</code>或者<code>~/.bash_profile</code>。</p>
-<pre class=" language-sh"><code class="language-sh">function setjdk() {
-    export JAVA_HOME=`/usr/libexec/java_home -v $@`
-}
-</code></pre>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">setjdk</span></span>() &#123;</div><div class="line">    <span class="built_in">export</span> JAVA_HOME=`/usr/libexec/java_home -v <span class="variable">$@</span>`</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>这样我们就可以通过输入一条命令进行版本切换了：</p>
-<pre class=" language-sh"><code class="language-sh">setjdk 1.8
-</code></pre>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">setjdk 1.8</div></pre></td></tr></table></figure>
 <h3 id="Java-OCD"><a href="#Java-OCD" class="headerlink" title="Java[OCD]"></a>Java[OCD]</h3><p>作为一个强迫症患者，每当我看到 Java 的错误写法就想纠正过来。</p>
 <p>当指编程语言时，Java 的正确写法是首字母大写，其余小写。其他写法比如<code>JAVA</code>、<code>java</code>都是不对的。</p>
 <p>在其他一些地方会使用小写的<code>java</code>：</p>
@@ -497,11 +463,9 @@ Java HotSpot(TM) 64-Bit Server VM (build 20.65-b04-466.1, mixed mode)
 </ul>
 <p>只有在全大写的标题里使用<code>JAVA</code>或者环境变量<code>JAVA_HOME</code>。</p>
 <h3 id="IntelliJ-IDEA"><a href="#IntelliJ-IDEA" class="headerlink" title="IntelliJ IDEA"></a>IntelliJ IDEA</h3><p>Java 开发必备工具 IntelliJ IDEA。可以安装 Ultimate Edition：</p>
-<pre class=" language-sh"><code class="language-sh">brew cask install intellij-idea
-</code></pre>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew cask install intellij-idea</div></pre></td></tr></table></figure>
 <p>也可以安装开源免费的 Community Edition：</p>
-<pre class=" language-sh"><code class="language-sh">brew cask install intellij-idea-ce
-</code></pre>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew cask install intellij-idea-ce</div></pre></td></tr></table></figure>
 <p>IntelliJ IDEA 有几套内建的快捷键方案（Keymap）。其中适用于 OS X 的有<code>Mac OS X</code>和<code>Mac OS X 10.5+</code>两种。区别是:</p>
 <ul>
 <li><code>Mac OS X</code>方案和其他平台上的快捷键类似，</li>
@@ -512,26 +476,22 @@ Java HotSpot(TM) 64-Bit Server VM (build 20.65-b04-466.1, mixed mode)
 <p>可以从 IDEA 的<code>Help &gt; Default Keymap Reference</code>打开快捷键的参考手册。不过从这里打开的是<code>Mac OS X 10.5+</code>方案的，而<code>Mac OS X</code>方案的可以从这里找到：<a href="http://www.basrikahveci.com/static/ij_keymap_mac.pdf" target="_blank" rel="external">http://www.basrikahveci.com/static/ij_keymap_mac.pdf</a>。</p>
 <h3 id="rbenv"><a href="#rbenv" class="headerlink" title="rbenv"></a><a href="https://github.com/sstephenson/rbenv" target="_blank" rel="external">rbenv</a></h3><p>人人都需要一个 Ruby 版本管理工具。rbenv 就是这样一个轻量级工具，它可以通过 brew 安装。</p>
 <p>安装：</p>
-<pre class=" language-sh"><code class="language-sh">brew install rbenv ruby-build
-</code></pre>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install rbenv ruby-build</div></pre></td></tr></table></figure>
 <p>然后在<code>~/.zshrc</code>中加上<code>rbenv</code>插件。否则你需要手动添加<code>eval &quot;$(rbenv init -)&quot;</code>到<code>~/zshrc</code>或者<code>~/.zprofile</code>文件里。</p>
 <p>有时候项目会依赖一些奇怪的版本号，比如<code>ruby-2.1.0</code>，这个时候你需要 <a href="https://github.com/tpope/rbenv-aliases" target="_blank" rel="external">rbenv-aliases</a> 帮忙：</p>
-<pre class=" language-sh"><code class="language-sh">brew install rbenv-aliases
-</code></pre>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install rbenv-aliases</div></pre></td></tr></table></figure>
 <p>替代品有 RVM、chruby。因为 RVM 不能通过 brew 安装，并且安装的时候会没有节操的修改一堆文件，所以被我早早的弃用了。chruby 也是一个轻量级工具，而且可以完美的和 Oh My Zsh 集成在一起，我看到有些生产环境在用它。</p>
 <h3 id="Ruby-常用别名"><a href="#Ruby-常用别名" class="headerlink" title="Ruby 常用别名"></a>Ruby 常用别名</h3><p>几乎所有 Ruby 开发人员都会把<code>bi</code>作为<code>bundle install</code>的别名。Oh My Zsh 提供<code>builder</code>插件，这个插件提供了一套别名，比如<code>bi</code>、<code>be</code>。同时还能让你在运行一些常用 gem 的时候直接输入<code>rspec</code>，不需要<code>be rspec</code>这样了。具体包括哪些命令请参考<a href="https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/bundler" target="_blank" rel="external">这里</a>。</p>
 <p>Z shell 对于<code>[</code>和<code>]</code>符号有特殊的处理，所以在运行<code>rake task[parameter]</code>的时候会报错，你需要改成<code>rake task\[parameter\]</code>或者<code>noglob rake task[parameter]</code>。然而 Oh My Zsh 已经看穿这一切，自带的 rake 插件已经解决了这个问题：<code>brake task[parameter]</code>。</p>
 <p>添加插件的时候注意把<code>rake</code>放到<code>bundler</code>后面，例如这样：</p>
-<pre><code>plugins=(git z sublime history rbenv bundler rake)
-</code></pre><h3 id="Node-版本管理"><a href="#Node-版本管理" class="headerlink" title="Node 版本管理"></a>Node 版本管理</h3><p>Node 的版本管理工具有很多，常用的会有以下几个：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">plugins=(git z sublime history rbenv bundler rake)</div></pre></td></tr></table></figure>
+<h3 id="Node-版本管理"><a href="#Node-版本管理" class="headerlink" title="Node 版本管理"></a>Node 版本管理</h3><p>Node 的版本管理工具有很多，常用的会有以下几个：</p>
 <ul>
 <li><p><a href="https://github.com/nodenv/nodenv" target="_blank" rel="external">nodenv</a></p>
 <p>该工具是一个类似 rbenv 的工具，命令和其完全一样，安装和配置也一样。</p>
-<pre><code>brew install nodenv
-</code></pre><p>你需要手动添加以下配置到<code>~/.zshrc</code>或者<code>~/.zprofile</code>文件里。</p>
-<pre class=" language-sh"><code class="language-sh">export PATH="$HOME/.nodenv/bin:$PATH"
-eval "$(nodenv init -)"
-</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">brew install nodenv</div></pre></td></tr></table></figure>
+<p>你需要手动添加以下配置到<code>~/.zshrc</code>或者<code>~/.zprofile</code>文件里。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> PATH=<span class="string">"<span class="variable">$HOME</span>/.nodenv/bin:<span class="variable">$PATH</span>"</span></div><div class="line"><span class="built_in">eval</span> <span class="string">"<span class="variable">$(nodenv init -)</span>"</span></div></pre></td></tr></table></figure>
 </li>
 <li><p><a href="https://github.com/creationix/nvm" target="_blank" rel="external">nvm</a></p>
 <p>该工具是一个类似 RVM 的工具，命令安装方式也基本一样，可以参考官方文档。</p>
