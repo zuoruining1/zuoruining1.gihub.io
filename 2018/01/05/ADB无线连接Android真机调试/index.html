@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="使用ADB无线连接Android真机进行调试"/>
+
+
+
+
+  <meta name="keywords" content="调试," />
+
+
+
+
+
+  <link rel="alternate" href="/default" title="Ruining.z Blog">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=1.1" />
+
+
+
+<link rel="canonical" href="http://zuoruining1.github.io/2018/01/05/ADB无线连接Android真机调试/"/>
+
+
+<meta name="description" content="前提条件 手机和电脑处于同一个局域网内 电脑上已经安装好ADB工具">
+<meta name="keywords" content="调试">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用ADB无线连接Android真机进行调试">
+<meta property="og:url" content="http://zuoruining1.github.io/2018/01/05/ADB无线连接Android真机调试/index.html">
+<meta property="og:site_name" content="Ruining.z Blog">
+<meta property="og:description" content="前提条件 手机和电脑处于同一个局域网内 电脑上已经安装好ADB工具">
+<meta property="og:updated_time" content="2018-01-05T01:56:29.145Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用ADB无线连接Android真机进行调试">
+<meta name="twitter:description" content="前提条件 手机和电脑处于同一个局域网内 电脑上已经安装好ADB工具">
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=1.1" />
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    fancybox: {
+      enable: false
+    },
+  };
+</script>
+
+
+
+
+  
+
+
+
+    <title> 使用ADB无线连接Android真机进行调试 - Ruining.z Blog </title>
+  </head>
+
+  <body>
+    <div id="page">
+      <header id="masthead"><div class="site-header-inner">
+    <h1 class="site-title">
+        <a href="/." class="logo">Ruining.z Blog</a>
+    </h1>
+
+    <nav id="nav-top">
+        
+            <ul id="menu-top" class="nav-top-items">
+                
+                    <li class="menu-item">
+                        <a href="/archives">
+                            
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a href="/about">
+                            
+                            
+                                About
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        
+  </nav>
+</div>
+
+      </header>
+      <div id="content">
+        
+    <div id="primary">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          使用ADB无线连接Android真机进行调试
+        
+      </h1>
+
+      <time class="post-time">
+          Jan 05 2018
+      </time>
+    </header>
+
+
+
+    
+            <div class="post-content">
+            <script src="/assets/js/APlayer.min.js"> </script><h2 id="前提条件"><a href="#前提条件" class="headerlink" title="前提条件"></a>前提条件</h2><ul>
+<li>手机和电脑处于同一个局域网内</li>
+<li>电脑上已经安装好ADB工具</li>
+</ul>
+<a id="more"></a>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h3 id="1、打开手机"><a href="#1、打开手机" class="headerlink" title="1、打开手机"></a>1、打开手机</h3><p>让手机在指定的端口可以接收到TCP/IP连接。</p>
+<ol>
+<li>确保手机开启了usb调试</li>
+<li>用usb线把手机和电脑连接起来</li>
+<li>执行命令：adb tcpip 5555</li>
+</ol>
+<p>执行成功后就可以把usb线拔掉了，端口可以不是5555，这个官方默认使用的。</p>
+<h3 id="2、找到手机的的IP地址"><a href="#2、找到手机的的IP地址" class="headerlink" title="2、找到手机的的IP地址"></a>2、找到手机的的IP地址</h3><p>执行命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb connect 192.168.1.100:5555</div></pre></td></tr></table></figure>
+<p>如果提示：</p>
+<blockquote>
+<p>connected to 192.160.1.100:5555</p>
+</blockquote>
+<p>则表示连接成功，如果端口号是5555可以省略，直接：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">db connect 192.168.1.100</div></pre></td></tr></table></figure>
+<h3 id="如果没有连接成功"><a href="#如果没有连接成功" class="headerlink" title="如果没有连接成功"></a>如果没有连接成功</h3><p>如果确定你的网络和端口都没问题，可以尝试重启一下adb服务：</p>
+<blockquote>
+<p>adb kill-server</p>
+</blockquote>
+<p>然后再进行连接，实在还是不行就Google吧。</p>
+<h3 id="连接成功"><a href="#连接成功" class="headerlink" title="连接成功"></a>连接成功</h3><p>如果连接成功的话，执行以下命令查看当前连接的设备列表：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb devices</div></pre></td></tr></table></figure>
+<p>可以看到连接的设备，像这样</p>
+<blockquote>
+<p>$ adb devices<br>List of devices attached<br>192.168.1.100:5555 device</p>
+</blockquote>
+<p>以后没有数据线也可以调试手机或者在上面运行自动化测试了。</p>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ol>
+<li>更换一个网络环境需要使用新IP重新connect即可。</li>
+<li>但是如果手机重启了，就需要重新连接数据线再次开启端口。</li>
+<li>开启端口可以通过adb，也可以直接在手机上打开，但一般需要root权限和特殊软件。</li>
+</ol>
+<p>原文地址：<a href="https://betacat.online/posts/2017-12-12/connect-adb-via-wifi/" target="_blank" rel="external">戳这里</a></p>
+
+            </div>
+          
+
+    
+      <footer class="post-footer">
+		
+		<div class="post-tags">
+		  
+			<a href="/tags/调试/">调试</a>
+		  
+		</div>
+		
+
+        
+        
+  <nav class="post-nav">
+    
+    
+      <a class="next" href="/2018/01/03/Mac-OS安装-OpenCV-python3/">
+        <span class="next-text nav-default">Mac OS安装 OpenCV(python3)</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+        
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+      </footer>
+    
+  </article>
+
+    </div>
+
+      </div>
+
+      <footer id="colophon"><span class="copyright-year">
+    
+        &copy;
+    
+        2016 -
+    
+    2018
+    <span class="footer-author">左瑞宁.</span>
+    <span class="power-by">
+        Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a> and <a class="theme-link" href="https://github.com/frostfan/hexo-theme-polarbear">Polar Bear</a>
+    </span>
+</span>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+    
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+
+    <script type="text/javascript" src="/js/src/theme.js?v=1.1"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=1.1"></script>
+
+  </body>
+</html>
