@@ -46,8 +46,7 @@
 <meta property="og:image" content="https://img.shields.io/badge/Version:-Original-blue.svg">
 <meta property="og:image" content="https://img.shields.io/badge/Translation:-Japanese-grey.svg">
 <meta property="og:image" content="https://img.shields.io/badge/Translation:-Portuguese-grey.svg">
-<meta property="og:image" content="https://img.shields.io/badge/QQ%e7%be%a4-121056965-blue.svg">
-<meta property="og:updated_time" content="2018-01-19T17:37:44.334Z">
+<meta property="og:updated_time" content="2018-01-20T13:44:43.687Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【转】Vim from zero to hero - Vim 从入门到精通">
 <meta name="twitter:description" content="Licensed under CC BY-SA 4.0.           Vim from zero to hero - Vim 从入门到精通   原文地址：https://github.com/mhinz/vim-galore 原文作者：Marco Hin">
@@ -280,11 +279,6 @@
 <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><h2 id="什么是-Vim？"><a href="#什么是-Vim？" class="headerlink" title="什么是 Vim？"></a>什么是 Vim？</h2><p><a href="http://www.vim.org" target="_blank" rel="external">Vim</a> 是一个历史悠久的文本编辑器，可以追溯到 <a href="https://en.wikipedia.org/wiki/QED_(text_editor" target="_blank" rel="external">qed</a>)。<a href="https://en.wikipedia.org/wiki/Bram_Moolenaar" target="_blank" rel="external">Bram<br>Moolenaar</a> 于 1991 年发布初始版本。</p>
 <p>该项目托管在 <a href="http://www.vim.org/index.php" target="_blank" rel="external">vim.org</a>。</p>
 <p>获取 Vim：用包管理器安装或者直接到 vim.org <a href="http://www.vim.org/download.php" target="_blank" rel="external">下载</a>。</p>
-<p>对于 Windows 用户，可以从 <a href="https://share.weiyun.com/da2be5937ac0e2bd3abc26355fad1204" target="_blank" rel="external">我的网盘</a> 下载。该版本可轻易添加 <code>python</code> 、<code>python3</code> 、<code>lua</code> 等支持，只需要安装 python、lua 即可。</p>
-<p>讨论使用相关问题最好使用 <a href="https://groups.google.com/forum/#!forum/vim_use" target="_blank" rel="external">vim_use</a> 邮件列表或者使用 IRC(<a href="https://freenode.net" target="_blank" rel="external">Freenode</a>) 的 <code>#vim</code> 频道。</p>
-<p>欢迎加入我们的中文讨论群：<a href="https://jq.qq.com/?_wv=1027&amp;k=43DB6SG" target="_blank" rel="external"><img src="https://img.shields.io/badge/QQ%e7%be%a4-121056965-blue.svg" alt="QQ"></a></p>
-<p>项目在 <a href="https://github.com/vim/vim" target="_blank" rel="external">Github</a> 上开发，项目讨论请订阅 <a href="https://groups.google.com/forum/#!forum/vim_dev" target="_blank" rel="external">vim_dev</a> 邮件列表。</p>
-<p>通过阅读 <a href="http://www.viemu.com/a-why-vi-vim.html" target="_blank" rel="external">Why, oh WHY, do those #?@! nutheads use vi?</a> 来对 Vim 进行大致的了解。</p>
 <p>返回主目录 <a href="#简介">:arrow_heading_up:</a></p>
 <h2 id="Vim-哲学"><a href="#Vim-哲学" class="headerlink" title="Vim 哲学"></a>Vim 哲学</h2><p>Vim 采用模式编辑的理念，即它提供了多种模式，按键在不同的模式下作用不同。你可以在 <em>普通模式</em> 下浏览文件，在 <em>插入模式</em> 下插入文本，在 <em>可视模式</em> 下选择行，在 <em>命令模式</em> 下执行命令等等。起初这听起来可能很复杂，但是这有一个很大的优点：不需要通过同时按住多个键来完成操作，大多数时候你只需要依次按下这些按键即可。越常用的操作，所需要的按键数量越少。</p>
 <p>和模式编辑紧密相连的概念是“操作符”和“动作”。<em>操作符</em> 开始一些行为，例如：修改，删除，或者选择文本。之后你要用一个 <em>动作</em> 来指定需要操作的文本区域。比如，要改变括号内的文本，需要执行 <code>ci(</code> （读做 <em>change inner parentheses</em>）；删除整个段落的内容，需要执行 <code>dap</code> （读做：<em>delete<br>around paragraph</em>）。</p>
