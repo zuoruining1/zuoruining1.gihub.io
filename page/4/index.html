@@ -9,11 +9,8 @@
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
-
-
-
 
 
 
@@ -31,6 +28,13 @@
 
 
 
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "1dbcc074"
+    });
+  daovoice('update');
+  </script>
 
 
 
@@ -45,6 +49,9 @@
 
 
 
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -54,25 +61,42 @@
 
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=6.0.6" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="https://ws1.sinaimg.cn/large/006tKfTcgy1fq7suslgi8j3024022glg.jpg?v=6.0.6">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://ws1.sinaimg.cn/large/006tKfTcgy1fq7suslgi8j3024022glg.jpg?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="https://ws1.sinaimg.cn/large/006tKfTcgy1fq7suslgi8j3024022glg.jpg?v=6.0.6">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://ws1.sinaimg.cn/large/006tKfTcgy1fq7suslgi8j3024022glg.jpg?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="https://ws1.sinaimg.cn/large/006tKfTcgy1fq7suslgi8j3024022glg.jpg?v=6.0.6">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://ws1.sinaimg.cn/large/006tKfTcgy1fq7suslgi8j3024022glg.jpg?v=5.1.4">
 
 
-  <link rel="mask-icon" href="https://ws1.sinaimg.cn/large/006tKfTcgy1fq7suslgi8j3024022glg.jpg?v=6.0.6" color="#222">
-
-
-
+  <link rel="mask-icon" href="https://ws1.sinaimg.cn/large/006tKfTcgy1fq7suslgi8j3024022glg.jpg?v=5.1.4" color="#222">
 
 
 
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ruining.z Blog">
+<meta property="og:url" content="http://zuoruining1.github.io/page/4/index.html">
+<meta property="og:site_name" content="Ruining.z Blog">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ruining.z Blog">
 
 
 
@@ -81,13 +105,15 @@
   var CONFIG = {
     root: '/',
     scheme: 'Pisces',
-    version: '6.0.6',
+    version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: false,
-    fastclick: false,
-    lazyload: false,
+    fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
     algolia: {
       applicationID: '',
       apiKey: '',
@@ -99,38 +125,12 @@
 </script>
 
 
-  
-
-
-
-
-
-
-
-
-
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Ruining.z Blog">
-<meta property="og:url" content="http://zuoruining1.github.io/page/4/index.html">
-<meta property="og:site_name" content="Ruining.z Blog">
-<meta property="og:locale" content="zh-Hans">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ruining.z Blog">
-
-
-
-
-
 
   <link rel="canonical" href="http://zuoruining1.github.io/page/4/"/>
 
 
 
-<script type="text/javascript" id="page.configurations">
-  CONFIG.page = {
-    sidebar: "",
-  };
-</script>
+
 
   <title>Ruining.z Blog</title>
   
@@ -141,34 +141,6 @@
 
 
 
-
-
-  <noscript>
-  <style type="text/css">
-    .use-motion .motion-element,
-    .use-motion .brand,
-    .use-motion .menu-item,
-    .sidebar-inner,
-    .use-motion .post-block,
-    .use-motion .pagination,
-    .use-motion .comments,
-    .use-motion .post-header,
-    .use-motion .post-body,
-    .use-motion .collection-title { opacity: initial; }
-
-    .use-motion .logo,
-    .use-motion .site-title,
-    .use-motion .site-subtitle {
-      opacity: initial;
-      top: initial;
-    }
-
-    .use-motion {
-      .logo-line-before i { left: initial; }
-      .logo-line-after i { right: initial; }
-    }
-  </style>
-</noscript>
 
 </head>
 
@@ -182,17 +154,17 @@
   <div class="container sidebar-position-left 
   page-home">
     <div class="headband"></div>
+
+
     <a href="https://github.com/zuoruining1" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"> 
-
-<div class="site-brand-wrapper">
+      <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
 
     <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
+      <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">Ruining.z Blog</span>
         <span class="logo-line-after"><i></i></span>
@@ -204,7 +176,7 @@
   </div>
 
   <div class="site-nav-toggle">
-    <button aria-label="Toggle navigation bar">
+    <button>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -219,40 +191,44 @@
     <ul id="menu" class="menu">
       
         
-        
-          
-  <li class="menu-item menu-item-home">
-    <a href="/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
-</li>
-
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
       
         
-        
-          
-  <li class="menu-item menu-item-tags">
-    <a href="/tags/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />Tags</a>
-</li>
-
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
       
         
-        
-          
-  <li class="menu-item menu-item-categories">
-    <a href="/categories/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />Categories</a>
-</li>
-
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
       
         
-        
-          
-  <li class="menu-item menu-item-archives">
-    <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
-</li>
-
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
       
 
       
@@ -260,34 +236,16 @@
   
 
   
-
-  
 </nav>
-
-
-  
-
-
-
-
-
-
 
 
 
  </div>
     </header>
 
-    
-
-
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          
-            
-
-          
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
@@ -300,6 +258,150 @@
   
   
 
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zuoruining1.github.io/2017/11/19/跟一只蜘蛛讲了很久的心事，然后把他拍死了/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="左瑞宁">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws1.sinaimg.cn/large/006tNc79gy1fq6rx8xc7ij307907gdft.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ruining.z Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/19/跟一只蜘蛛讲了很久的心事，然后把他拍死了/" itemprop="url">跟一只蜘蛛讲了很久的心事，然后把她拍死了</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-19T20:06:26+08:00">
+                2017-11-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/杂思/" itemprop="url" rel="index">
+                    <span itemprop="name">杂思</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>我没有办法，我向来经不住别人的哀求，是她一再的要求我这样做的。二十多年里这不是第一次了，从小到大她都陪在我身边，聆听了我生活中的所有喜怒哀乐。所有的黑色情绪我都丢给她，她也安静的接受着我的每一次生气和大哭。今晚我照常和她说起一些令人难过的事，又一次提起想要一场车祸，或是从天桥上坠下后选择性失忆，或者吞下一大把阿普唑仑被抢救后，忘记之前的生活，过去太让人痛苦了，我真是难以承受……</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/19/跟一只蜘蛛讲了很久的心事，然后把他拍死了/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
   
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
@@ -310,7 +412,7 @@
     <link itemprop="mainEntityOfPage" href="http://zuoruining1.github.io/2017/10/18/如何得体跳槽/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="溺象海">
+      <meta itemprop="name" content="左瑞宁">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="https://ws1.sinaimg.cn/large/006tNc79gy1fq6rx8xc7ij307907gdft.jpg">
     </span>
@@ -336,12 +438,13 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-18T14:35:55+08:00">2017-10-18</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-18T14:35:55+08:00">
+                2017-10-18
+              </time>
             
 
-            
             
 
             
@@ -356,10 +459,14 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">In</span>
+                <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/工作/" itemprop="url" rel="index"><span itemprop="name">工作</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/工作/" itemprop="url" rel="index">
+                    <span itemprop="name">工作</span>
+                  </a>
+                </span>
 
                 
                 
@@ -401,16 +508,13 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/10/18/如何得体跳槽/#more" rel="contents">
-              Read more &raquo;
+              阅读全文 &raquo;
             </a>
           </div>
           <!--/noindex-->
         
       
     </div>
-
-    
-
     
     
     
@@ -449,8 +553,6 @@
   
   
 
-  
-
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -459,7 +561,7 @@
     <link itemprop="mainEntityOfPage" href="http://zuoruining1.github.io/2017/10/11/卡辛斯基：论工业社会及其未来/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="溺象海">
+      <meta itemprop="name" content="左瑞宁">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="https://ws1.sinaimg.cn/large/006tNc79gy1fq6rx8xc7ij307907gdft.jpg">
     </span>
@@ -485,12 +587,13 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-11T16:08:23+08:00">2017-10-11</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-11T16:08:23+08:00">
+                2017-10-11
+              </time>
             
 
-            
             
 
             
@@ -529,16 +632,13 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/10/11/卡辛斯基：论工业社会及其未来/#more" rel="contents">
-              Read more &raquo;
+              阅读全文 &raquo;
             </a>
           </div>
           <!--/noindex-->
         
       
     </div>
-
-    
-
     
     
     
@@ -577,8 +677,6 @@
   
   
 
-  
-
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -587,7 +685,7 @@
     <link itemprop="mainEntityOfPage" href="http://zuoruining1.github.io/2017/10/11/find-命令/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="溺象海">
+      <meta itemprop="name" content="左瑞宁">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="https://ws1.sinaimg.cn/large/006tNc79gy1fq6rx8xc7ij307907gdft.jpg">
     </span>
@@ -613,12 +711,13 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-11T10:23:08+08:00">2017-10-11</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-11T10:23:08+08:00">
+                2017-10-11
+              </time>
             
 
-            
             
 
             
@@ -633,10 +732,14 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">In</span>
+                <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
 
                 
                 
@@ -675,16 +778,13 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/10/11/find-命令/#more" rel="contents">
-              Read more &raquo;
+              阅读全文 &raquo;
             </a>
           </div>
           <!--/noindex-->
         
       
     </div>
-
-    
-
     
     
     
@@ -723,8 +823,6 @@
   
   
 
-  
-
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -733,7 +831,7 @@
     <link itemprop="mainEntityOfPage" href="http://zuoruining1.github.io/2017/10/10/mac设置指南/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="溺象海">
+      <meta itemprop="name" content="左瑞宁">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="https://ws1.sinaimg.cn/large/006tNc79gy1fq6rx8xc7ij307907gdft.jpg">
     </span>
@@ -759,12 +857,13 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-10T11:25:42+08:00">2017-10-10</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-10T11:25:42+08:00">
+                2017-10-10
+              </time>
             
 
-            
             
 
             
@@ -779,10 +878,14 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">In</span>
+                <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/工具/" itemprop="url" rel="index"><span itemprop="name">工具</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/工具/" itemprop="url" rel="index">
+                    <span itemprop="name">工具</span>
+                  </a>
+                </span>
 
                 
                 
@@ -822,16 +925,13 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/10/10/mac设置指南/#more" rel="contents">
-              Read more &raquo;
+              阅读全文 &raquo;
             </a>
           </div>
           <!--/noindex-->
         
       
     </div>
-
-    
-
     
     
     
@@ -870,8 +970,6 @@
   
   
 
-  
-
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -880,7 +978,7 @@
     <link itemprop="mainEntityOfPage" href="http://zuoruining1.github.io/2017/10/10/软件测试分类/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="溺象海">
+      <meta itemprop="name" content="左瑞宁">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="https://ws1.sinaimg.cn/large/006tNc79gy1fq6rx8xc7ij307907gdft.jpg">
     </span>
@@ -906,12 +1004,13 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-10T01:18:08+08:00">2017-10-10</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-10T01:18:08+08:00">
+                2017-10-10
+              </time>
             
 
-            
             
 
             
@@ -926,10 +1025,14 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">In</span>
+                <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/软件测试/" itemprop="url" rel="index"><span itemprop="name">软件测试</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/软件测试/" itemprop="url" rel="index">
+                    <span itemprop="name">软件测试</span>
+                  </a>
+                </span>
 
                 
                 
@@ -1165,9 +1268,6 @@
         
       
     </div>
-
-    
-
     
     
     
@@ -1206,8 +1306,6 @@
   
   
 
-  
-
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -1216,7 +1314,7 @@
     <link itemprop="mainEntityOfPage" href="http://zuoruining1.github.io/2017/10/09/自由/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="溺象海">
+      <meta itemprop="name" content="左瑞宁">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="https://ws1.sinaimg.cn/large/006tNc79gy1fq6rx8xc7ij307907gdft.jpg">
     </span>
@@ -1242,12 +1340,13 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-09T22:57:40+08:00">2017-10-09</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-09T22:57:40+08:00">
+                2017-10-09
+              </time>
             
 
-            
             
 
             
@@ -1262,10 +1361,14 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">In</span>
+                <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/杂思/" itemprop="url" rel="index"><span itemprop="name">杂思</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/杂思/" itemprop="url" rel="index">
+                    <span itemprop="name">杂思</span>
+                  </a>
+                </span>
 
                 
                 
@@ -1307,16 +1410,13 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/10/09/自由/#more" rel="contents">
-              Read more &raquo;
+              阅读全文 &raquo;
             </a>
           </div>
           <!--/noindex-->
         
       
     </div>
-
-    
-
     
     
     
@@ -1355,8 +1455,6 @@
   
   
 
-  
-
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -1365,7 +1463,7 @@
     <link itemprop="mainEntityOfPage" href="http://zuoruining1.github.io/2017/09/21/软件测试学习笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="溺象海">
+      <meta itemprop="name" content="左瑞宁">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="https://ws1.sinaimg.cn/large/006tNc79gy1fq6rx8xc7ij307907gdft.jpg">
     </span>
@@ -1391,12 +1489,13 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-21T10:21:36+08:00">2017-09-21</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-21T10:21:36+08:00">
+                2017-09-21
+              </time>
             
 
-            
             
 
             
@@ -1411,10 +1510,14 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">In</span>
+                <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/软件测试/" itemprop="url" rel="index"><span itemprop="name">软件测试</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/软件测试/" itemprop="url" rel="index">
+                    <span itemprop="name">软件测试</span>
+                  </a>
+                </span>
 
                 
                 
@@ -1460,16 +1563,13 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/09/21/软件测试学习笔记/#more" rel="contents">
-              Read more &raquo;
+              阅读全文 &raquo;
             </a>
           </div>
           <!--/noindex-->
         
       
     </div>
-
-    
-
     
     
     
@@ -1508,8 +1608,6 @@
   
   
 
-  
-
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
@@ -1518,7 +1616,7 @@
     <link itemprop="mainEntityOfPage" href="http://zuoruining1.github.io/2017/09/19/iterm2快捷键/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="溺象海">
+      <meta itemprop="name" content="左瑞宁">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="https://ws1.sinaimg.cn/large/006tNc79gy1fq6rx8xc7ij307907gdft.jpg">
     </span>
@@ -1544,12 +1642,13 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-19T16:15:45+08:00">2017-09-19</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-19T16:15:45+08:00">
+                2017-09-19
+              </time>
             
 
-            
             
 
             
@@ -1564,10 +1663,14 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">In</span>
+                <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/工具/" itemprop="url" rel="index"><span itemprop="name">工具</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/工具/" itemprop="url" rel="index">
+                    <span itemprop="name">工具</span>
+                  </a>
+                </span>
 
                 
                 
@@ -1611,166 +1714,13 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/09/19/iterm2快捷键/#more" rel="contents">
-              Read more &raquo;
+              阅读全文 &raquo;
             </a>
           </div>
           <!--/noindex-->
         
       
     </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zuoruining1.github.io/2017/09/18/软件测试（一）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="溺象海">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://ws1.sinaimg.cn/large/006tNc79gy1fq6rx8xc7ij307907gdft.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ruining.z Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/18/软件测试（一）/" itemprop="url">软件测试（一）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-18T17:34:39+08:00">2017-09-18</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/软件测试/" itemprop="url" rel="index"><span itemprop="name">软件测试</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="术语："><a href="#术语：" class="headerlink" title="术语："></a>术语：</h3><blockquote>
-<p>“软件测试就是证明软件不存在错误的过程。”</p>
-<p>“软件测试的目的在于证明软件能够正确完成其预定的功能。”</p>
-<p>“软件测试就是建立一个‘软件做了其应该做的’信心的过程。”</p>
-</blockquote>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/09/18/软件测试（一）/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
     
     
     
@@ -1805,12 +1755,15 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
 
           </div>
+          
+
+
           
 
         </div>
@@ -1839,138 +1792,78 @@
             
               <img class="site-author-image" itemprop="image"
                 src="https://ws1.sinaimg.cn/large/006tNc79gy1fq6rx8xc7ij307907gdft.jpg"
-                alt="溺象海" />
+                alt="左瑞宁" />
             
-              <p class="site-author-name" itemprop="name">溺象海</p>
+              <p class="site-author-name" itemprop="name">左瑞宁</p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives/">
-                
-                    <span class="site-state-item-count">48</span>
-                    <span class="site-state-item-name">posts</span>
-                  </a>
-                </div>
-              
+          <nav class="site-state motion-element">
 
+            
+              <div class="site-state-item site-state-posts">
               
-                
-                
-                <div class="site-state-item site-state-categories">
-                  <a href="/categories/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">9</span>
-                    <span class="site-state-item-name">categories</span>
-                  </a>
-                </div>
+                <a href="/archives/">
               
+                  <span class="site-state-item-count">49</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
 
+            
               
-                
-                
-                <div class="site-state-item site-state-tags">
-                  <a href="/tags/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">21</span>
-                    <span class="site-state-item-name">tags</span>
-                  </a>
-                </div>
               
-            </nav>
-          
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
 
           
 
           
             <div class="links-of-author motion-element">
-              
-                <span class="links-of-author-item">
-                  <a href="https://github.com/zuoruining1" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
-                  
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="https://www.zhihu.com/people/xin-ao-gu-du/activities" target="_blank" title="知乎"><i class="fa fa-fw fa-globe"></i>知乎</a>
-                  
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="163@:xinaogudu@163.com" target="_blank" title="E-Mail"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
-                  
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="https://weibo.com/3884773965/profile?topnav=1&wvr=6&is_all=1" target="_blank" title="微博"><i class="fa fa-fw fa-globe"></i>微博</a>
-                  
-                </span>
-              
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/zuoruining1" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/xin-ao-gu-du/activities" target="_blank" title="知乎">
+                      
+                        <i class="fa fa-fw fa-globe"></i>知乎</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="163@:xinaogudu@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/3884773965/profile?topnav=1&wvr=6&is_all=1" target="_blank" title="微博">
+                      
+                        <i class="fa fa-fw fa-globe"></i>微博</a>
+                  </span>
+                
             </div>
           
 
@@ -1980,9 +1873,6 @@
           
           
 
-          
-            
-          
           
 
         </div>
@@ -2002,21 +1892,20 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
-  <span class="with-love" id="animate"> 
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">溺象海</span>
-
-  
+  <span class="author" itemprop="copyrightHolder">左瑞宁</span>
 
   
 </div>
 
 
-
-
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
 
 
@@ -2024,18 +1913,18 @@
 
 
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Pisces</a> v6.0.6</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
 
 
 
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共192.8k字</span>
+  <span class="post-count">博客全站共193.1k字</span>
 </div>
 
         
-
 
 
 
@@ -2074,12 +1963,8 @@
 
 
 
-
-
-
-
-
   
+
 
 
 
@@ -2087,8 +1972,6 @@
 
   
   
-
-
 
 
 
@@ -2103,6 +1986,16 @@
 
   
   
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
     <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   
 
@@ -2113,7 +2006,7 @@
 
   
   
-    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
   
 
   
@@ -2130,32 +2023,36 @@
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=6.0.6"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=6.0.6"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=6.0.6"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.0.6"></script>
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
 
 
 
   
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
 
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.6"></script>
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
 
 
 
   
+
+
+  
+
 
 
 
@@ -2182,23 +2079,21 @@
 
 
 
-  
-
-
-
 
 
   
 
-  
+
+
+
 
   
 
   
 
   
-  
 
+  
   
 
   
