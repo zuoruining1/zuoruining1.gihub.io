@@ -90,18 +90,17 @@
 
 
 
-<meta name="description" content="在hexo新建文章时，自动打开markdown编辑器。">
 <meta name="keywords" content="Hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo n 时默认打开markdown编辑器">
 <meta property="og:url" content="http://zuoruining1.github.io/2018/04/10/hexo-n-时候默认打开markdown编辑器/index.html">
 <meta property="og:site_name" content="Ruining.z Blog">
-<meta property="og:description" content="在hexo新建文章时，自动打开markdown编辑器。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-10T09:26:18.171Z">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcgy1fqa9b4cyrwj30m608mq3g.jpg">
+<meta property="og:updated_time" content="2018-04-12T14:49:00.520Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo n 时默认打开markdown编辑器">
-<meta name="twitter:description" content="在hexo新建文章时，自动打开markdown编辑器。">
+<meta name="twitter:image" content="https://ws3.sinaimg.cn/large/006tKfTcgy1fqa9b4cyrwj30m608mq3g.jpg">
 
 
 
@@ -356,15 +355,16 @@
       
 
       
-        <script src="/assets/js/APlayer.min.js"> </script><blockquote>
-<p>在hexo新建文章时，自动打开markdown<br>编辑器。</p>
-</blockquote>
+        <script src="/assets/js/APlayer.min.js"> </script><p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fqa9b4cyrwj30m608mq3g.jpg" alt=""></p>
 <a id="more"></a>
+<p>首先：</p>
+<blockquote>
 <ul>
 <li>在Hexo目录下的<code>scripts</code>目录中创建一个<code>JavaScript</code>脚本文件。</li>
 <li>如果没有这个<code>scripts</code>目录，则新建一个。</li>
 <li><code>scripts</code>目录新建的<code>JavaScript</code>脚本文件可以任意取名。</li>
 </ul>
+</blockquote>
 <p>通过这个脚本，我们用其来监听hexo new这个动作，并在检测到hexo new之后，执行编辑器打开的命令。</p>
 <p>windows平台的Hexo用户，则将下列内容写入你的脚本：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> spawn = <span class="built_in">require</span>(<span class="string">'child_process'</span>).exec;</div><div class="line"></div><div class="line"><span class="comment">// Hexo 2.x 用户复制这段</span></div><div class="line">hexo.on(<span class="string">'new'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">path</span>)</span>&#123;</div><div class="line">  spawn(<span class="string">'start  "markdown编辑器绝对路径.exe" '</span> + path);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// Hexo 3 用户复制这段</span></div><div class="line">hexo.on(<span class="string">'new'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</div><div class="line">  spawn(<span class="string">'start  "markdown编辑器绝对路径.exe" '</span> + data.path);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
@@ -442,6 +442,12 @@
 
 
     <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
       
     </div>
   </div>
