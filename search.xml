@@ -3,12 +3,12 @@
   <entry>
     <title><![CDATA[github pages + Hexo博客域名绑定]]></title>
     <url>%2F2018%2F04%2F13%2Fgithub-pages-Hexo-%E5%9F%9F%E5%90%8D%E7%BB%91%E5%AE%9A%2F</url>
-    <content type="text"><![CDATA[终于有自己的域名了！ 经过几番折腾，终于绑定好了域名，现在总结一下。 申请个人域名： 首先你要有个域名，在万网购买即可。（当然要注册阿里云账号。） 域名实名认证，具体看这里。 在域名信息查询（WHOIS）确保自己的域名状态正常（如图）就开一开始配置啦！ 域名添加dns解析： 添加记录类型为CNAME、主机记录为www 、记录值为自己github二级域名的解析。 添加记录类型为A、主机记录为@ 、记录值为自己github的ip地址的解析。 通过ping 自己的gihub二级域名可获取ip 添加完成勾选点击启用，状态为–即可。 创建CNAME文件：在hexo本地目录source下新建CNAME（无后缀）文件并填入自己的域名，比如： 12zuorn.topwww.zuorn.top 重新生成上传： 1hexo d -g github域名绑定：打开博客在github中的地址，点击Settings，修改Custom domain为我们自己的域名保存即可。 这个时候在浏览器当中输入域名就可以顺利打开了。]]></content>
+    <content type="text"><![CDATA[终于有自己的域名了！ 经过几番折腾，终于绑定好了域名，现在总结一下。 申请个人域名： 首先你要有个域名，在万网购买即可。（当然要注册阿里云账号。） 域名实名认证，具体看这里。 在域名信息查询（WHOIS）确保自己的域名状态正常（如图）就可以开始配置啦！ 域名添加dns解析： 添加记录类型为CNAME、主机记录为www 、记录值为自己github二级域名的解析。 添加记录类型为A、主机记录为@ 、记录值为自己github的ip地址的解析。 通过ping 自己的gihub二级域名可获取ip 添加完成勾选点击启用，状态为–即可。 创建CNAME文件：在hexo本地目录source下新建CNAME（无后缀）文件并填入自己的域名，比如： 12zuorn.topwww.zuorn.top 重新生成上传： 1hexo d -g github域名绑定：打开博客在github中的地址，点击Settings，修改Custom domain为我们自己的域名保存即可。 这个时候在浏览器当中输入域名就可以顺利打开了。]]></content>
       <categories>
         <category>Hexo</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
