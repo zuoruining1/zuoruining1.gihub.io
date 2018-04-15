@@ -325,7 +325,7 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2017/12/06/不能承受生命之轻摘抄/" itemprop="url">
+            <a class="post-title-link" href="/不能承受生命之轻摘抄.html" itemprop="url">
               
                 <span itemprop="name">不能承受生命之轻摘抄</span>
               
@@ -362,7 +362,7 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2017/12/06/精进摘抄/" itemprop="url">
+            <a class="post-title-link" href="/精进摘抄.html" itemprop="url">
               
                 <span itemprop="name">精进摘抄</span>
               
@@ -720,6 +720,28 @@
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: true,
+        appId: 'z4rMzgsUhXzRfKkDRa4ICIYU-gzGzoHsz',
+        appKey: '9FjEE4GX0Kaqt42EMhcPT2tW',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 

@@ -308,7 +308,7 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2018/01/15/Halo/" itemprop="url">
+            <a class="post-title-link" href="/Halo.html" itemprop="url">
               
                 <span itemprop="name">Halo</span>
               
@@ -336,7 +336,7 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2017/12/22/真相/" itemprop="url">
+            <a class="post-title-link" href="/真相.html" itemprop="url">
               
                 <span itemprop="name">真相</span>
               
@@ -364,7 +364,7 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2017/09/15/从前慢/" itemprop="url">
+            <a class="post-title-link" href="/从前慢.html" itemprop="url">
               
                 <span itemprop="name">从前慢</span>
               
@@ -392,7 +392,7 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2017/09/14/我们为什么习惯性迟到。/" itemprop="url">
+            <a class="post-title-link" href="/我们为什么习惯性迟到。.html" itemprop="url">
               
                 <span itemprop="name">习惯性迟到</span>
               
@@ -420,7 +420,7 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2017/09/08/嘿，你叫什么名字！/" itemprop="url">
+            <a class="post-title-link" href="/嘿，你叫什么名字！.html" itemprop="url">
               
                 <span itemprop="name">嘿，你叫什么名字！</span>
               
@@ -772,6 +772,28 @@
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: true,
+        appId: 'z4rMzgsUhXzRfKkDRa4ICIYU-gzGzoHsz',
+        appKey: '9FjEE4GX0Kaqt42EMhcPT2tW',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 

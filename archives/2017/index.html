@@ -325,7 +325,7 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2017/12/26/我只是讨厌屈服/" itemprop="url">
+            <a class="post-title-link" href="/我只是讨厌屈服.html" itemprop="url">
               
                 <span itemprop="name">我只是讨厌屈服</span>
               
@@ -362,7 +362,7 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2017/12/25/我在荒岛上迎接黎明-王小波/" itemprop="url">
+            <a class="post-title-link" href="/我在荒岛上迎接黎明-王小波.html" itemprop="url">
               
                 <span itemprop="name">我在荒岛上迎接黎明 王小波</span>
               
@@ -399,7 +399,7 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2017/12/22/真相/" itemprop="url">
+            <a class="post-title-link" href="/真相.html" itemprop="url">
               
                 <span itemprop="name">真相</span>
               
@@ -436,7 +436,7 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2017/12/19/Hexo-添加-SEO/" itemprop="url">
+            <a class="post-title-link" href="/Hexo-添加-SEO.html" itemprop="url">
               
                 <span itemprop="name">Hexo 添加 SEO</span>
               
@@ -473,7 +473,7 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2017/12/18/when/" itemprop="url">
+            <a class="post-title-link" href="/when.html" itemprop="url">
               
                 <span itemprop="name">《when》</span>
               
@@ -510,7 +510,7 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2017/12/18/毛姆《面纱》/" itemprop="url">
+            <a class="post-title-link" href="/毛姆《面纱》.html" itemprop="url">
               
                 <span itemprop="name">我爱你如此之深，这我毫不在意</span>
               
@@ -547,7 +547,7 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2017/12/17/逃避自由/" itemprop="url">
+            <a class="post-title-link" href="/逃避自由.html" itemprop="url">
               
                 <span itemprop="name">弗洛姆-《逃避自由》</span>
               
@@ -584,7 +584,7 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2017/12/15/黑色星期五/" itemprop="url">
+            <a class="post-title-link" href="/黑色星期五.html" itemprop="url">
               
                 <span itemprop="name">《祖父》 胡迁</span>
               
@@ -621,7 +621,7 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2017/12/12/似水柔情-十二/" itemprop="url">
+            <a class="post-title-link" href="/似水柔情-十二.html" itemprop="url">
               
                 <span itemprop="name">似水柔情</span>
               
@@ -658,7 +658,7 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2017/12/08/王小波《爱你就像爱生命》/" itemprop="url">
+            <a class="post-title-link" href="/王小波《爱你就像爱生命》.html" itemprop="url">
               
                 <span itemprop="name">王小波《爱你就像爱生命》</span>
               
@@ -695,7 +695,7 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2017/12/06/人类简史摘抄/" itemprop="url">
+            <a class="post-title-link" href="/人类简史摘抄.html" itemprop="url">
               
                 <span itemprop="name">人类简史摘抄</span>
               
@@ -732,7 +732,7 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2017/12/06/未来简史摘抄/" itemprop="url">
+            <a class="post-title-link" href="/未来简史摘抄.html" itemprop="url">
               
                 <span itemprop="name">未来简史摘抄</span>
               
@@ -1090,6 +1090,28 @@
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: true,
+        appId: 'z4rMzgsUhXzRfKkDRa4ICIYU-gzGzoHsz',
+        appKey: '9FjEE4GX0Kaqt42EMhcPT2tW',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 

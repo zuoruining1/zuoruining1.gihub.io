@@ -308,7 +308,7 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2018/04/13/github-pages-Hexo-域名绑定/" itemprop="url">
+            <a class="post-title-link" href="/github-pages-Hexo-域名绑定.html" itemprop="url">
               
                 <span itemprop="name">github pages + Hexo博客域名绑定</span>
               
@@ -336,7 +336,7 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2018/04/10/test/" itemprop="url">
+            <a class="post-title-link" href="/test.html" itemprop="url">
               
                 <span itemprop="name">hexo 插入音乐和视频</span>
               
@@ -364,7 +364,7 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2018/04/10/hexo-n-时候默认打开markdown编辑器/" itemprop="url">
+            <a class="post-title-link" href="/hexo-n-时候默认打开markdown编辑器.html" itemprop="url">
               
                 <span itemprop="name">hexo n 时默认打开markdown编辑器</span>
               
@@ -392,7 +392,7 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2017/12/19/Hexo-添加-SEO/" itemprop="url">
+            <a class="post-title-link" href="/Hexo-添加-SEO.html" itemprop="url">
               
                 <span itemprop="name">Hexo 添加 SEO</span>
               
@@ -420,7 +420,7 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2017/09/10/Hexo博客代码高亮/" itemprop="url">
+            <a class="post-title-link" href="/Hexo博客代码高亮.html" itemprop="url">
               
                 <span itemprop="name">Hexo博客配置代码高亮</span>
               
@@ -448,7 +448,7 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2017/09/08/Hexo常用命令/" itemprop="url">
+            <a class="post-title-link" href="/Hexo常用命令.html" itemprop="url">
               
                 <span itemprop="name">Hexo常用命令</span>
               
@@ -800,6 +800,28 @@
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: true,
+        appId: 'z4rMzgsUhXzRfKkDRa4ICIYU-gzGzoHsz',
+        appKey: '9FjEE4GX0Kaqt42EMhcPT2tW',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 
