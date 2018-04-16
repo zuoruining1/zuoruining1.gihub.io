@@ -86,17 +86,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Halo]]></title>
-    <url>%2FHalo.html</url>
-    <content type="text"><![CDATA[我经常会在一瞬间想通了某件事 释然了 可在下一秒又想不通了 每天都在这样不停的循环中 你们会吗？晚安吧! 释然还是纠结都消失在梦里。 new APlayer({ element: document.getElementById("aplayer0"), narrow: false, autoplay: false, showlrc: 0, music: { title: "Halo", author: "Lotte Kestner", url: "http://ow0nbmjqv.bkt.clouddn.com/Lotte%20Kestner%20-%20Halo.mp3", pic: "https://ws4.sinaimg.cn/large/006tNc79ly1fnhpjs057cj31kw11okjl.jpg", } });]]></content>
-      <categories>
-        <category>杂思</category>
-      </categories>
-      <tags>
-        <tag>生活</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[使用ADB无线连接Android真机进行调试]]></title>
     <url>%2FADB%E6%97%A0%E7%BA%BF%E8%BF%9E%E6%8E%A5Android%E7%9C%9F%E6%9C%BA%E8%B0%83%E8%AF%95.html</url>
     <content type="text"><![CDATA[前提条件 手机和电脑处于同一个局域网内 电脑上已经安装好ADB工具 步骤1、打开手机让手机在指定的端口可以接收到TCP/IP连接。 确保手机开启了usb调试 用usb线把手机和电脑连接起来 执行命令：adb tcpip 5555 执行成功后就可以把usb线拔掉了，端口可以不是5555，这个官方默认使用的。 2、找到手机的的IP地址执行命令 1adb connect 192.168.1.100:5555 如果提示： connected to 192.160.1.100:5555 则表示连接成功，如果端口号是5555可以省略，直接： 1db connect 192.168.1.100 如果没有连接成功如果确定你的网络和端口都没问题，可以尝试重启一下adb服务： adb kill-server 然后再进行连接，实在还是不行就Google吧。 连接成功如果连接成功的话，执行以下命令查看当前连接的设备列表： 1adb devices 可以看到连接的设备，像这样 $ adb devicesList of devices attached192.168.1.100:5555 device 以后没有数据线也可以调试手机或者在上面运行自动化测试了。 注意事项 更换一个网络环境需要使用新IP重新connect即可。 但是如果手机重启了，就需要重新连接数据线再次开启端口。 开启端口可以通过adb，也可以直接在手机上打开，但一般需要root权限和特殊软件。 原文地址：戳这里]]></content>
